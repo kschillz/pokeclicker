@@ -2885,7 +2885,7 @@
     y="208"
     height="64"
     width="64"
-    data-bind="click:function(){BreedingController.openBreedingModal()}, attr: { class: App.game.breeding.canAccess() ? &#39;completed&#39; : &#39;locked&#39; }">
+    data-bind="click:function(){BreedingController.openBreedingModal()}, attr: { class: App.game.breeding.canAccess() ? &#39;completed&#39; : &#39;locked&#39;, &#39;aria-label&#39;: App.game.breeding.canAccess() ? &#39;Pokemon Day Care&#39; : &#39;Pokemon Day Care (Locked)&#39; }">
 </rect>
 
     
@@ -2899,7 +2899,7 @@
     y="624"
     height="80"
     width="96"
-    data-bind="click:function(){Safari.openModal()}, attr: { class: Safari.canAccess() ? &#39;completed&#39; : &#39;locked&#39; }">
+    data-bind="click:function(){Safari.openModal()}, attr: { class: Safari.canAccess() ? &#39;completed&#39; : &#39;locked&#39;, &#39;aria-label&#39;: App.game.breeding.canAccess() ? &#39;Pokemon Day Care&#39; : &#39;Pokemon Day Care (Locked)&#39;}">
 </rect>
 
     
@@ -2913,7 +2913,7 @@
     y="480"
     height="64"
     width="48"
-    data-bind="click:function(){App.game.underground.openUndergroundModal()}, attr: { class: App.game.underground.canAccess() ? &#39;completed&#39; : &#39;locked&#39; }">
+    data-bind="click:function(){App.game.underground.openUndergroundModal()}, attr: { class: App.game.underground.canAccess() ? &#39;completed&#39; : &#39;locked&#39;, &#39;aria-label&#39;: App.game.underground.canAccess() ? &#39;Underground Entrance&#39; : &#39;Underground Entrance (Locked)&#39; }">
 </rect>
 
     
@@ -2927,7 +2927,7 @@
     y="640"
     height="48"
     width="48"
-    data-bind="click:function(){FarmController.openFarmModal()}, attr: { class: App.game.farming.canAccess() ? &#39;completed&#39; : &#39;locked&#39; }">
+    data-bind="click:function(){FarmController.openFarmModal()}, attr: { class: App.game.farming.canAccess() ? &#39;completed&#39; : &#39;locked&#39;, &#39;aria-label&#39;: App.game.farming.canAccess() ? &#39;Farm&#39; : &#39;Farm (Locked)&#39; }">
 </rect>
 
     
@@ -2941,7 +2941,7 @@
     y="560"
     height="32"
     width="48"
-    data-bind="click:function(){MapHelper.openShipModal()}, attr:{ class: player.highestRegion() &gt;= 1 ? &#39;completed&#39; : &#39;locked&#39;}">
+    data-bind="click:function(){MapHelper.openShipModal()}, attr:{ class: player.highestRegion() &gt;= 1 ? &#39;completed&#39; : &#39;locked&#39;, &#39;aria-label&#39;: player.highestRegion() &gt;= 1 ? &#39;Dock&#39; : &#39;Dock (Locked)&#39;}">
 </rect>
 
     
@@ -2961,7 +2961,7 @@
     y="560"
     height="48"
     width="128"
-    data-bind="visible: player.highestRegion() &gt;= 1, click:function(){MapHelper.openShipModal()}, attr:{ class: player.highestRegion() &gt;= 1 ? &#39;completed&#39; : &#39;locked&#39;}">
+    data-bind="visible: player.highestRegion() &gt;= 1, click:function(){MapHelper.openShipModal()}, attr:{ class: player.highestRegion() &gt;= 1 ? &#39;completed&#39; : &#39;locked&#39;, &#39;aria-label&#39;: player.highestRegion() &gt;= 1 ? &#39;SS-Anne&#39; : &#39;SS-Anne (Locked)&#39; }">
 </rect>
 </g>
 

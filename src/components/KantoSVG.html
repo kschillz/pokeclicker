@@ -573,7 +573,7 @@
         { name: "Pokemon Day Care"
         , x: 68, y: 13
         , width: 4, height: 4
-        , databind: "click:function(){BreedingController.openBreedingModal()}, attr: { class: App.game.breeding.canAccess() ? 'completed' : 'locked' }"
+        , databind: "click:function(){BreedingController.openBreedingModal()}, attr: { class: App.game.breeding.canAccess() ? 'completed' : 'locked', 'aria-label': App.game.breeding.canAccess() ? 'Pokemon Day Care' : 'Pokemon Day Care (Locked)' }"
         })
      %>
 
@@ -581,7 +581,7 @@
         { name: "Safari Zone"
         , x: 47, y: 39
         , width: 6, height: 5
-        , databind: "click:function(){Safari.openModal()}, attr: { class: Safari.canAccess() ? 'completed' : 'locked' }"
+        , databind: "click:function(){Safari.openModal()}, attr: { class: Safari.canAccess() ? 'completed' : 'locked', 'aria-label': App.game.breeding.canAccess() ? 'Pokemon Day Care' : 'Pokemon Day Care (Locked)'}"
         })
      %>
 
@@ -589,7 +589,7 @@
         { name: "Underground Entrance"
         , x: 83, y: 30
         , width: 3, height: 4
-        , databind: "click:function(){App.game.underground.openUndergroundModal()}, attr: { class: App.game.underground.canAccess() ? 'completed' : 'locked' }"
+        , databind: "click:function(){App.game.underground.openUndergroundModal()}, attr: { class: App.game.underground.canAccess() ? 'completed' : 'locked', 'aria-label': App.game.underground.canAccess() ? 'Underground Entrance' : 'Underground Entrance (Locked)' }"
         })
      %>
 
@@ -597,7 +597,7 @@
         { name: "Farm"
         , x: 72, y: 40
         , width: 3, height: 3
-        , databind: "click:function(){FarmController.openFarmModal()}, attr: { class: App.game.farming.canAccess() ? 'completed' : 'locked' }"
+        , databind: "click:function(){FarmController.openFarmModal()}, attr: { class: App.game.farming.canAccess() ? 'completed' : 'locked', 'aria-label': App.game.farming.canAccess() ? 'Farm' : 'Farm (Locked)' }"
         })
      %>
 
@@ -605,7 +605,7 @@
         { name: "Dock"
         , x: 61, y: 35
         , width: 3, height: 2
-        , databind: "click:function(){MapHelper.openShipModal()}, attr:{ class: player.highestRegion() >= 1 ? 'completed' : 'locked'}"
+        , databind: "click:function(){MapHelper.openShipModal()}, attr:{ class: player.highestRegion() >= 1 ? 'completed' : 'locked', 'aria-label': player.highestRegion() >= 1 ? 'Dock' : 'Dock (Locked)'}"
         })
      %>
 
@@ -613,7 +613,7 @@
          { name: "SS-Anne"
          , x: 58, y: 35
          , width: 8, height: 3
-         , databind: "click:function(){MapHelper.openShipModal()}, attr:{ class: player.highestRegion() >= 1 ? 'completed' : 'locked'}"
+         , databind: "click:function(){MapHelper.openShipModal()}, attr:{ class: player.highestRegion() >= 1 ? 'completed' : 'locked', 'aria-label': player.highestRegion() >= 1 ? 'SS-Anne' : 'SS-Anne (Locked)' }"
          , visible:  "player.highestRegion() >= 1"
          , image: "assets/images/ship.png"
          })
