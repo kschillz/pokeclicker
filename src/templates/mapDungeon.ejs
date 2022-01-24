@@ -18,7 +18,7 @@ Parameters:
 <% */ %>
 
 <rect class="city"
-    data-town="<%= locals.name %>" 
+    data-town="<%= locals.name %>"
     aria-label="<%= locals.name %>"
     aria-details="Navigate to <%= locals.name %>"
     role="button"
@@ -27,5 +27,6 @@ Parameters:
     height="<%= (locals.height || 3) * 16 %>"
     width="<%= (locals.width || 4) * 16 %>"
     data-bind="click:function(){MapHelper.moveToTown('<%= (locals.moveToTown) ? locals.moveToTown.replace(/'/g, '\\\'') : locals.name.replace(/'/g, '\\\'') %>')},
-        attr: { class: MapHelper.calculateTownCssClass('<%= locals.name.replace(/'/g, '\\\'') %>') }">
+        attr: { class: MapHelper.calculateTownCssClass('<%= locals.name.replace(/'/g, '\\\'') %>'),
+                'aria-label': MapHelper.calculateTownA11yLabel('<%= locals.name.replace(/'/g, '\\\'') %>') }">
 </rect>

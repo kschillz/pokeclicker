@@ -97,6 +97,17 @@ class MapHelper {
         return cls;
     }
 
+    public static calculateRouteA11yLabel(route: number, region: GameConstants.Region): string {
+        const cssClass = this.calculateRouteCssClass(route, region);
+        if (cssClass.includes('currentLocation')) {
+            return `Route ${route} (Current Location)`;
+        } else if (cssClass.includes('locked')) {
+            return `Route ${route} (Locked)`;
+        } else {
+            return `Route ${route}`;
+        }
+    }
+
     public static calculateTownCssClass(town: string): string {
         if (!player.route() && player.town().name == town) {
             return 'currentLocation';
@@ -122,6 +133,14 @@ class MapHelper {
             }
         }
         return 'completed';
+    }
+
+    public static calculateTownA11yLabel(town: string): string {
+        switch (this.calculateTownCssClass(town)) {
+            case 'currentLocation': return `${town} (Current Location)`;
+            case 'locked': return `${town} (Locked)`;
+            default: return town;
+        }
     }
 
     public static accessToTown(townName: string): boolean {

@@ -25,7 +25,7 @@ Parameters:
 <% */ %>
 
 <rect class="city"
-    data-town="<%= locals.name %>" 
+    data-town="<%= locals.name %>"
     aria-label="<%= locals.name %>"
     aria-details="Navigate to <%= locals.name %>"
     role="button"
@@ -35,7 +35,8 @@ Parameters:
     width="<%= (locals.width || 4) * 16 %>"
     data-bind="
         click:function(){MapHelper.moveToTown('<%= locals.name.replace(/'/g, '\\\'') %>')},
-        attr: { class: MapHelper.calculateTownCssClass('<%= locals.name.replace(/'/g, '\\\'') %>') },
+        attr: { class: MapHelper.calculateTownCssClass('<%= locals.name.replace(/'/g, '\\\'') %>'),
+                'aria-label': MapHelper.calculateTownA11yLabel('<%= locals.name.replace(/'/g, '\\\'') %>') },
         <% if (locals.home) { %>
             css: { flash: MapHelper.ableToTravel() }
         <% } %>">
