@@ -337,7 +337,7 @@
                 <div id="townMap" class="card sortable border-secondary mb-3" data-bind="visible: App.game.keyItems.hasKeyItem(KeyItems.KeyItem.Town_map) && (App.game.gameState === GameConstants.GameState.fighting || App.game.gameState === GameConstants.GameState.gym || App.game.gameState === GameConstants.GameState.town||
                     App.game.gameState === GameConstants.GameState.shop || App.game.gameState === GameConstants.GameState.farm || App.game.gameState === GameConstants.GameState.paused)">
                     <div class="card-header p-0" data-toggle="collapse" href="#mapBody">
-                        <span data-bind="text: `Town Map (${GameConstants.camelCaseToString(GameConstants.Region[player.region])})`">Town Map</span>
+                        <span id="town-map-label" data-bind="text: `Town Map (${GameConstants.camelCaseToString(GameConstants.Region[player.region])})`">Town Map</span>
                     </div>
                     <button class='btn btn-sm' style="position: absolute; left: 0px; top: 0px; width: auto; height: 41px;" data-toggle="popover" data-trigger="hover" data-html="true" data-title="Map Legend:"
                     data-content="Map locations will be coloured based on the following:
@@ -369,7 +369,7 @@
                     <div id="mapBody" class="card-body p-0 show">
                         <button class='btn btn-sm btn-block btn-info' data-bind="click: () => SubRegions.openModal(), visible: SubRegions.getSubRegions(player.region).filter(sr => sr.unlocked()).length > 1">Subregional Travel</button>
                         <p id="mapTooltip" class="btn btn-secondary" style="visibility: hidden;"></p>
-                        <svg id="map" aria-label="Town Map" viewBox="0 0 1600 960" preserveAspectRatio="xMaxYMax meet">
+                        <svg id="map" aria-labelledby="town-map-label" viewBox="0 0 1600 960" preserveAspectRatio="xMaxYMax meet">
                             <defs>
                                 <lineargradient id="mx-gradient-f8cecc-1-ea583b-1-s-0" x1="0%" x2="0%" y1="0%"
                                                 y2="100%">
