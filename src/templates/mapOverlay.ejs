@@ -34,7 +34,10 @@ Parameters:
     width="<%= locals.width * 16 %>"
     data-bind="visible: <%= locals.visible %>"/>
 <rect class="city"
-    data-town="<%= locals.name %>" 
+    data-town="<%= locals.name %>"
+    aria-label="<%= locals.name %>"
+    aria-details="Navigate to <%= locals.name %>"
+    role="button"
     x="<%= locals.x * 16 %>"
     y="<%= locals.y * 16 %>"
     height="<%= locals.height * 16 %>"

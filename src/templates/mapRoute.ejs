@@ -39,6 +39,9 @@ Parameters:
 <% } %>
     data-bind="click:function(){ MapHelper.moveToRoute(<%= locals.route %>, <%= locals.region %>); } ">
     <rect data-route='<%= locals.route %>'
+        aria-label="<%= locals.route %>"
+        aria-details="Navigate to Route <%= locals.route %>"
+        role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(<%= locals.route %>, <%= locals.region %>) }"
         height="<%= locals.height * 16 %>"
         width="<%= locals.width * 16 %>"
