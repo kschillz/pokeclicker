@@ -1,4 +1,4 @@
-<g data-bind='visible: player.region == GameConstants.Region.sinnoh'>
+<g data-bind="visible: player.region == GameConstants.Region.sinnoh, attr: { 'aria-hidden': player.region != GameConstants.Region.sinnoh }">
     <image width="1600" height="960" xlink:href="assets/images/sinnoh.png" href="assets/images/sinnoh.png"></image>
 
     <!-- ------ -->

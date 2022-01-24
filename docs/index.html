@@ -1457,7 +1457,7 @@
                     <div id="mapBody" class="card-body p-0 show">
                         <button class='btn btn-sm btn-block btn-info' data-bind="click: () => SubRegions.openModal(), visible: SubRegions.getSubRegions(player.region).filter(sr => sr.unlocked()).length > 1">Subregional Travel</button>
                         <p id="mapTooltip" class="btn btn-secondary" style="visibility: hidden;"></p>
-                        <svg id="map" viewBox="0 0 1600 960" preserveAspectRatio="xMaxYMax meet">
+                        <svg id="map" aria-label="Town Map" viewBox="0 0 1600 960" preserveAspectRatio="xMaxYMax meet">
                             <defs>
                                 <lineargradient id="mx-gradient-f8cecc-1-ea583b-1-s-0" x1="0%" x2="0%" y1="0%"
                                                 y2="100%">
@@ -1471,7 +1471,7 @@
                                 </lineargradient>
                             </defs>
 
-                            <g data-bind='visible: player.region == GameConstants.Region.kanto'>
+                            <g data-bind="visible: player.region == GameConstants.Region.kanto, attr: { 'aria-hidden': player.region != GameConstants.Region.kanto }">
     <image width="1600" height="960" xlink:href="assets/images/kanto.png" href="assets/images/kanto.png"></image>
 
     <!-- ------ -->
@@ -1487,7 +1487,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(1, 0); } ">
     <rect data-route='1'
-        aria-label="1"
+        aria-label="Route 1"
         aria-details="Navigate to Route 1"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(1, 0) }"
@@ -1496,7 +1496,7 @@
         x="368" y="416">
     </rect>
 
-    <text style="font-size: 32px" x="420" y="450">1</text>
+    <text aria-hidden="true" style="font-size: 32px" x="420" y="450">1</text>
 
 </g>
 
@@ -1510,7 +1510,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(2, 0); } ">
     <rect data-route='2'
-        aria-label="2"
+        aria-label="Route 2"
         aria-details="Navigate to Route 2"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(2, 0) }"
@@ -1519,7 +1519,7 @@
         x="368" y="304">
     </rect>
 
-    <text style="font-size: 32px" x="384" y="338">2</text>
+    <text aria-hidden="true" style="font-size: 32px" x="384" y="338">2</text>
 
 </g>
 
@@ -1530,7 +1530,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(2, 0); } ">
     <rect data-route='2'
-        aria-label="2"
+        aria-label="Route 2"
         aria-details="Navigate to Route 2"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(2, 0) }"
@@ -1541,7 +1541,7 @@
 
 </g>
 
- 
+
     <!--Route 3-->
     
 
@@ -1549,7 +1549,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(3, 0); } ">
     <rect data-route='3'
-        aria-label="3"
+        aria-label="Route 3"
         aria-details="Navigate to Route 3"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(3, 0) }"
@@ -1558,7 +1558,7 @@
         x="480" y="176">
     </rect>
 
-    <text style="font-size: 32px" x="592" y="210">3</text>
+    <text aria-hidden="true" style="font-size: 32px" x="592" y="210">3</text>
 
 </g>
 
@@ -1570,7 +1570,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(4, 0); } ">
     <rect data-route='4'
-        aria-label="4"
+        aria-label="Route 4"
         aria-details="Navigate to Route 4"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(4, 0) }"
@@ -1579,7 +1579,7 @@
         x="800" y="160">
     </rect>
 
-    <text style="font-size: 32px" x="888" y="194">4</text>
+    <text aria-hidden="true" style="font-size: 32px" x="888" y="194">4</text>
 
 </g>
 
@@ -1593,7 +1593,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(5, 0); } ">
     <rect data-route='5'
-        aria-label="5"
+        aria-label="Route 5"
         aria-details="Navigate to Route 5"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(5, 0) }"
@@ -1602,7 +1602,7 @@
         x="1056" y="216">
     </rect>
 
-    <text style="font-size: 32px" x="1060" y="250">5</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1060" y="250">5</text>
 
 </g>
 
@@ -1615,7 +1615,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(5, 0); } ">
     <rect data-route='5'
-        aria-label="5"
+        aria-label="Route 5"
         aria-details="Navigate to Route 5"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(5, 0) }"
@@ -1636,7 +1636,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(6, 0); } ">
     <rect data-route='6'
-        aria-label="6"
+        aria-label="Route 6"
         aria-details="Navigate to Route 6"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(6, 0) }"
@@ -1645,7 +1645,7 @@
         x="1056" y="368">
     </rect>
 
-    <text style="font-size: 32px" x="1088" y="402">6</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1088" y="402">6</text>
 
 </g>
 
@@ -1657,7 +1657,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(7, 0); } ">
     <rect data-route='7'
-        aria-label="7"
+        aria-label="Route 7"
         aria-details="Navigate to Route 7"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(7, 0) }"
@@ -1666,7 +1666,7 @@
         x="784" y="320">
     </rect>
 
-    <text style="font-size: 32px" x="864" y="354">7</text>
+    <text aria-hidden="true" style="font-size: 32px" x="864" y="354">7</text>
 
 </g>
 
@@ -1678,7 +1678,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(8, 0); } ">
     <rect data-route='8'
-        aria-label="8"
+        aria-label="Route 8"
         aria-details="Navigate to Route 8"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(8, 0) }"
@@ -1687,7 +1687,7 @@
         x="1136" y="320">
     </rect>
 
-    <text style="font-size: 32px" x="1240" y="354">8</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1240" y="354">8</text>
 
 </g>
 
@@ -1699,7 +1699,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(9, 0); } ">
     <rect data-route='9'
-        aria-label="9"
+        aria-label="Route 9"
         aria-details="Navigate to Route 9"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(9, 0) }"
@@ -1708,11 +1708,11 @@
         x="1136" y="144">
     </rect>
 
-    <text style="font-size: 32px" x="1256" y="178">9</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1256" y="178">9</text>
 
 </g>
 
-	 
+
 	   <!--Extra bit of Route 9-->
     
 
@@ -1720,7 +1720,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(9, 0); } ">
     <rect data-route='9'
-        aria-label="9"
+        aria-label="Route 9"
         aria-details="Navigate to Route 9"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(9, 0) }"
@@ -1739,7 +1739,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(10, 0); } ">
     <rect data-route='10'
-        aria-label="10"
+        aria-label="Route 10"
         aria-details="Navigate to Route 10"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(10, 0) }"
@@ -1759,7 +1759,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(10, 0); } ">
     <rect data-route='10'
-        aria-label="10"
+        aria-label="Route 10"
         aria-details="Navigate to Route 10"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(10, 0) }"
@@ -1768,7 +1768,7 @@
         x="1408" y="160">
     </rect>
 
-    <text style="font-size: 32px" x="1416" y="194">10</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1416" y="194">10</text>
 
 </g>
 
@@ -1779,7 +1779,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(10, 0); } ">
     <rect data-route='10'
-        aria-label="10"
+        aria-label="Route 10"
         aria-details="Navigate to Route 10"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(10, 0) }"
@@ -1798,7 +1798,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(11, 0); } ">
     <rect data-route='11'
-        aria-label="11"
+        aria-label="Route 11"
         aria-details="Navigate to Route 11"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(11, 0) }"
@@ -1807,7 +1807,7 @@
         x="1136" y="512">
     </rect>
 
-    <text style="font-size: 32px" x="1216" y="546">11</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1216" y="546">11</text>
 
 </g>
 
@@ -1818,7 +1818,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(11, 0); } ">
     <rect data-route='11'
-        aria-label="11"
+        aria-label="Route 11"
         aria-details="Navigate to Route 11"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(11, 0) }"
@@ -1836,7 +1836,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(11, 0); } ">
     <rect data-route='11'
-        aria-label="11"
+        aria-label="Route 11"
         aria-details="Navigate to Route 11"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(11, 0) }"
@@ -1857,7 +1857,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(12, 0); } ">
     <rect data-route='12'
-        aria-label="12"
+        aria-label="Route 12"
         aria-details="Navigate to Route 12"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(12, 0) }"
@@ -1866,7 +1866,7 @@
         x="1408" y="336">
     </rect>
 
-    <text style="font-size: 32px" x="1456" y="370">12</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1456" y="370">12</text>
 
 </g>
 
@@ -1880,7 +1880,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(13, 0); } ">
     <rect data-route='13'
-        aria-label="13"
+        aria-label="Route 13"
         aria-details="Navigate to Route 13"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(13, 0) }"
@@ -1889,7 +1889,7 @@
         x="1408" y="464">
     </rect>
 
-    <text style="font-size: 32px" x="1480" y="498">13</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1480" y="498">13</text>
 
 </g>
 
@@ -1901,7 +1901,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(14, 0); } ">
     <rect data-route='14'
-        aria-label="14"
+        aria-label="Route 14"
         aria-details="Navigate to Route 14"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(14, 0) }"
@@ -1910,7 +1910,7 @@
         x="1200" y="640">
     </rect>
 
-    <text style="font-size: 32px" x="1288" y="674">14</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1288" y="674">14</text>
 
 </g>
 
@@ -1922,7 +1922,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(15, 0); } ">
     <rect data-route='15'
-        aria-label="15"
+        aria-label="Route 15"
         aria-details="Navigate to Route 15"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(15, 0) }"
@@ -1931,7 +1931,7 @@
         x="832" y="704">
     </rect>
 
-    <text style="font-size: 32px" x="1000" y="738">15</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1000" y="738">15</text>
 
 </g>
 
@@ -1942,7 +1942,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(15, 0); } ">
     <rect data-route='15'
-        aria-label="15"
+        aria-label="Route 15"
         aria-details="Navigate to Route 15"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(15, 0) }"
@@ -1961,7 +1961,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(16, 0); } ">
     <rect data-route='16'
-        aria-label="16"
+        aria-label="Route 16"
         aria-details="Navigate to Route 16"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(16, 0) }"
@@ -1970,7 +1970,7 @@
         x="544" y="320">
     </rect>
 
-    <text style="font-size: 32px" x="576" y="354">16</text>
+    <text aria-hidden="true" style="font-size: 32px" x="576" y="354">16</text>
 
 </g>
 
@@ -1984,7 +1984,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(17, 0); } ">
     <rect data-route='17'
-        aria-label="17"
+        aria-label="Route 17"
         aria-details="Navigate to Route 17"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(17, 0) }"
@@ -1993,7 +1993,7 @@
         x="544" y="320">
     </rect>
 
-    <text style="font-size: 32px" x="696" y="354">17</text>
+    <text aria-hidden="true" style="font-size: 32px" x="696" y="354">17</text>
 
 </g>
 
@@ -2005,7 +2005,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(18, 0); } ">
     <rect data-route='18'
-        aria-label="18"
+        aria-label="Route 18"
         aria-details="Navigate to Route 18"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(18, 0) }"
@@ -2014,7 +2014,7 @@
         x="544" y="704">
     </rect>
 
-    <text style="font-size: 32px" x="608" y="738">18</text>
+    <text aria-hidden="true" style="font-size: 32px" x="608" y="738">18</text>
 
 </g>
 
@@ -2026,7 +2026,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(19, 0); } ">
     <rect data-route='19'
-        aria-label="19"
+        aria-label="Route 19"
         aria-details="Navigate to Route 19"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(19, 0) }"
@@ -2035,7 +2035,7 @@
         x="656" y="864">
     </rect>
 
-    <text style="font-size: 32px" x="720" y="898">19</text>
+    <text aria-hidden="true" style="font-size: 32px" x="720" y="898">19</text>
 
 </g>
 
@@ -2046,7 +2046,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(19, 0); } ">
     <rect data-route='19'
-        aria-label="19"
+        aria-label="Route 19"
         aria-details="Navigate to Route 19"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(19, 0) }"
@@ -2065,7 +2065,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(20, 0); } ">
     <rect data-route='20'
-        aria-label="20"
+        aria-label="Route 20"
         aria-details="Navigate to Route 20"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(20, 0) }"
@@ -2074,7 +2074,7 @@
         x="432" y="864">
     </rect>
 
-    <text style="font-size: 32px" x="480" y="898">20</text>
+    <text aria-hidden="true" style="font-size: 32px" x="480" y="898">20</text>
 
 </g>
 
@@ -2088,7 +2088,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(21, 0); } ">
     <rect data-route='21'
-        aria-label="21"
+        aria-label="Route 21"
         aria-details="Navigate to Route 21"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(21, 0) }"
@@ -2097,7 +2097,7 @@
         x="368" y="608">
     </rect>
 
-    <text style="font-size: 32px" x="448" y="642">21</text>
+    <text aria-hidden="true" style="font-size: 32px" x="448" y="642">21</text>
 
 </g>
 
@@ -2109,7 +2109,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(22, 0); } ">
     <rect data-route='22'
-        aria-label="22"
+        aria-label="Route 22"
         aria-details="Navigate to Route 22"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(22, 0) }"
@@ -2118,7 +2118,7 @@
         x="112" y="416">
     </rect>
 
-    <text style="font-size: 32px" x="224" y="450">22</text>
+    <text aria-hidden="true" style="font-size: 32px" x="224" y="450">22</text>
 
 </g>
 
@@ -2132,7 +2132,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(23, 0); } ">
     <rect data-route='23'
-        aria-label="23"
+        aria-label="Route 23"
         aria-details="Navigate to Route 23"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(23, 0) }"
@@ -2141,7 +2141,7 @@
         x="112" y="320">
     </rect>
 
-    <text style="font-size: 32px" x="120" y="354">23</text>
+    <text aria-hidden="true" style="font-size: 32px" x="120" y="354">23</text>
 
 </g>
 
@@ -2154,7 +2154,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(23, 0); } ">
     <rect data-route='23'
-        aria-label="23"
+        aria-label="Route 23"
         aria-details="Navigate to Route 23"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(23, 0) }"
@@ -2175,7 +2175,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(24, 0); } ">
     <rect data-route='24'
-        aria-label="24"
+        aria-label="Route 24"
         aria-details="Navigate to Route 24"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(24, 0) }"
@@ -2184,7 +2184,7 @@
         x="1056" y="32">
     </rect>
 
-    <text style="font-size: 32px" x="1072" y="66">24</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1072" y="66">24</text>
 
 </g>
 
@@ -2196,7 +2196,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(25, 0); } ">
     <rect data-route='25'
-        aria-label="25"
+        aria-label="Route 25"
         aria-details="Navigate to Route 25"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(25, 0) }"
@@ -2205,7 +2205,7 @@
         x="1056" y="32">
     </rect>
 
-    <text style="font-size: 32px" x="1176" y="66">25</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1176" y="66">25</text>
 
 </g>
 
@@ -2254,7 +2254,7 @@
         attr: { class: MapHelper.calculateTownCssClass('Viridian City') },
         ">
 </rect>
-	  
+
    <!--Viridian City extended-->
     
 
@@ -2271,7 +2271,7 @@
         click:function(){MapHelper.moveToTown('Viridian City')},
         attr: { class: MapHelper.calculateTownCssClass('Viridian City') },
         ">
-</rect>	  
+</rect>
 
     <!--Pewter City-->
     
@@ -2306,7 +2306,7 @@
         click:function(){MapHelper.moveToTown('Pewter City')},
         attr: { class: MapHelper.calculateTownCssClass('Pewter City') },
         ">
-</rect>	 
+</rect>
 
     <!--Cerulean City-->
     
@@ -2379,7 +2379,7 @@
         attr: { class: MapHelper.calculateTownCssClass('Celadon City') },
         ">
 </rect>
-	 
+
     <!--Celadon City extended-->
     
 
@@ -2396,7 +2396,7 @@
         click:function(){MapHelper.moveToTown('Celadon City')},
         attr: { class: MapHelper.calculateTownCssClass('Celadon City') },
         ">
-</rect>	 
+</rect>
 
     <!--Saffron City-->
     
@@ -2415,7 +2415,7 @@
         attr: { class: MapHelper.calculateTownCssClass('Saffron City') },
         ">
 </rect>
-	 
+
 	    <!--Saffron City extended-->
     
 
@@ -2486,8 +2486,8 @@
         click:function(){MapHelper.moveToTown('Cinnabar Island')},
         attr: { class: MapHelper.calculateTownCssClass('Cinnabar Island') },
         ">
-</rect>	 
-	 
+</rect>
+
     <!--Cinnabar Island ext2-->
     
 
@@ -2504,8 +2504,8 @@
         click:function(){MapHelper.moveToTown('Cinnabar Island')},
         attr: { class: MapHelper.calculateTownCssClass('Cinnabar Island') },
         ">
-</rect>	 	 
-	 
+</rect>
+
     <!--Indigo Plateau Kanto-->
     
 
@@ -2592,7 +2592,7 @@
     data-bind="click:function(){MapHelper.moveToTown('Mt. Moon')},
         attr: { class: MapHelper.calculateTownCssClass('Mt. Moon') }">
 </rect>
-	 
+
     <!--Mt. Moon extended-->
     
 
@@ -2687,7 +2687,7 @@
     data-bind="click:function(){MapHelper.moveToTown('Seafoam Islands')},
         attr: { class: MapHelper.calculateTownCssClass('Seafoam Islands') }">
 </rect>
-	 
+
     <!--Seafoam Islands extended-->
     
 
@@ -2866,7 +2866,7 @@
 </rect>
 </g>
 
-                            <g data-bind='visible: player.region == GameConstants.Region.johto'>
+                            <g data-bind="visible: player.region == GameConstants.Region.johto, attr: { 'aria-hidden': player.region != GameConstants.Region.johto }">
     <image width="1600" height="960" xlink:href="assets/images/johto.png" href="assets/images/johto.png"></image>
 
     <!-- ------ -->
@@ -2880,7 +2880,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(27, 1); } ">
     <rect data-route='27'
-        aria-label="27"
+        aria-label="Route 27"
         aria-details="Navigate to Route 27"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(27, 1) }"
@@ -2889,7 +2889,7 @@
         x="1232" y="672">
     </rect>
 
-    <text style="font-size: 32px" x="1368" y="706">27</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1368" y="706">27</text>
 
 </g>
 
@@ -2903,7 +2903,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(26, 1); } ">
     <rect data-route='26'
-        aria-label="26"
+        aria-label="Route 26"
         aria-details="Navigate to Route 26"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(26, 1) }"
@@ -2912,7 +2912,7 @@
         x="1488" y="304">
     </rect>
 
-    <text style="font-size: 32px" x="1632" y="338">26</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1632" y="338">26</text>
 
 </g>
 
@@ -2924,7 +2924,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(28, 1); } ">
     <rect data-route='28'
-        aria-label="28"
+        aria-label="Route 28"
         aria-details="Navigate to Route 28"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(28, 1) }"
@@ -2933,7 +2933,7 @@
         x="1296" y="528">
     </rect>
 
-    <text style="font-size: 32px" x="1376" y="562">28</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1376" y="562">28</text>
 
 </g>
 
@@ -2945,7 +2945,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(29, 1); } ">
     <rect data-route='29'
-        aria-label="29"
+        aria-label="Route 29"
         aria-details="Navigate to Route 29"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(29, 1) }"
@@ -2954,7 +2954,7 @@
         x="864" y="672">
     </rect>
 
-    <text style="font-size: 32px" x="992" y="706">29</text>
+    <text aria-hidden="true" style="font-size: 32px" x="992" y="706">29</text>
 
 </g>
 
@@ -2968,7 +2968,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(30, 1); } ">
     <rect data-route='30'
-        aria-label="30"
+        aria-label="Route 30"
         aria-details="Navigate to Route 30"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(30, 1) }"
@@ -2977,7 +2977,7 @@
         x="816" y="304">
     </rect>
 
-    <text style="font-size: 32px" x="952" y="338">30</text>
+    <text aria-hidden="true" style="font-size: 32px" x="952" y="338">30</text>
 
 </g>
 
@@ -2989,7 +2989,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(31, 1); } ">
     <rect data-route='31'
-        aria-label="31"
+        aria-label="Route 31"
         aria-details="Navigate to Route 31"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(31, 1) }"
@@ -2998,7 +2998,7 @@
         x="720" y="304">
     </rect>
 
-    <text style="font-size: 32px" x="776" y="338">31</text>
+    <text aria-hidden="true" style="font-size: 32px" x="776" y="338">31</text>
 
 </g>
 
@@ -3012,7 +3012,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(32, 1); } ">
     <rect data-route='32'
-        aria-label="32"
+        aria-label="Route 32"
         aria-details="Navigate to Route 32"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(32, 1) }"
@@ -3021,7 +3021,7 @@
         x="672" y="416">
     </rect>
 
-    <text style="font-size: 32px" x="800" y="450">32</text>
+    <text aria-hidden="true" style="font-size: 32px" x="800" y="450">32</text>
 
 </g>
 
@@ -3034,7 +3034,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(32, 1); } ">
     <rect data-route='32'
-        aria-label="32"
+        aria-label="Route 32"
         aria-details="Navigate to Route 32"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(32, 1) }"
@@ -3054,7 +3054,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(32, 1); } ">
     <rect data-route='32'
-        aria-label="32"
+        aria-label="Route 32"
         aria-details="Navigate to Route 32"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(32, 1) }"
@@ -3073,7 +3073,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(33, 1); } ">
     <rect data-route='33'
-        aria-label="33"
+        aria-label="Route 33"
         aria-details="Navigate to Route 33"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(33, 1) }"
@@ -3082,7 +3082,7 @@
         x="512" y="880">
     </rect>
 
-    <text style="font-size: 32px" x="600" y="914">33</text>
+    <text aria-hidden="true" style="font-size: 32px" x="600" y="914">33</text>
 
 </g>
 
@@ -3096,7 +3096,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(34, 1); } ">
     <rect data-route='34'
-        aria-label="34"
+        aria-label="Route 34"
         aria-details="Navigate to Route 34"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(34, 1) }"
@@ -3105,7 +3105,7 @@
         x="384" y="608">
     </rect>
 
-    <text style="font-size: 32px" x="440" y="642">34</text>
+    <text aria-hidden="true" style="font-size: 32px" x="440" y="642">34</text>
 
 </g>
 
@@ -3118,7 +3118,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(34, 1); } ">
     <rect data-route='34'
-        aria-label="34"
+        aria-label="Route 34"
         aria-details="Navigate to Route 34"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(34, 1) }"
@@ -3138,7 +3138,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(34, 1); } ">
     <rect data-route='34'
-        aria-label="34"
+        aria-label="Route 34"
         aria-details="Navigate to Route 34"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(34, 1) }"
@@ -3159,7 +3159,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(35, 1); } ">
     <rect data-route='35'
-        aria-label="35"
+        aria-label="Route 35"
         aria-details="Navigate to Route 35"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(35, 1) }"
@@ -3168,7 +3168,7 @@
         x="384" y="304">
     </rect>
 
-    <text style="font-size: 32px" x="424" y="338">35</text>
+    <text aria-hidden="true" style="font-size: 32px" x="424" y="338">35</text>
 
 </g>
 
@@ -3180,7 +3180,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(36, 1); } ">
     <rect data-route='36'
-        aria-label="36"
+        aria-label="Route 36"
         aria-details="Navigate to Route 36"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(36, 1) }"
@@ -3189,7 +3189,7 @@
         x="384" y="304">
     </rect>
 
-    <text style="font-size: 32px" x="504" y="338">36</text>
+    <text aria-hidden="true" style="font-size: 32px" x="504" y="338">36</text>
 
 </g>
 
@@ -3203,7 +3203,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(37, 1); } ">
     <rect data-route='37'
-        aria-label="37"
+        aria-label="Route 37"
         aria-details="Navigate to Route 37"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(37, 1) }"
@@ -3212,7 +3212,7 @@
         x="528" y="160">
     </rect>
 
-    <text style="font-size: 32px" x="560" y="194">37</text>
+    <text aria-hidden="true" style="font-size: 32px" x="560" y="194">37</text>
 
 </g>
 
@@ -3224,7 +3224,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(38, 1); } ">
     <rect data-route='38'
-        aria-label="38"
+        aria-label="Route 38"
         aria-details="Navigate to Route 38"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(38, 1) }"
@@ -3233,7 +3233,7 @@
         x="288" y="160">
     </rect>
 
-    <text style="font-size: 32px" x="384" y="194">38</text>
+    <text aria-hidden="true" style="font-size: 32px" x="384" y="194">38</text>
 
 </g>
 
@@ -3247,7 +3247,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(39, 1); } ">
     <rect data-route='39'
-        aria-label="39"
+        aria-label="Route 39"
         aria-details="Navigate to Route 39"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(39, 1) }"
@@ -3256,7 +3256,7 @@
         x="240" y="112">
     </rect>
 
-    <text style="font-size: 32px" x="296" y="146">39</text>
+    <text aria-hidden="true" style="font-size: 32px" x="296" y="146">39</text>
 
 </g>
 
@@ -3270,7 +3270,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(40, 1); } ">
     <rect data-route='40'
-        aria-label="40"
+        aria-label="Route 40"
         aria-details="Navigate to Route 40"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(40, 1) }"
@@ -3279,7 +3279,7 @@
         x="176" y="320">
     </rect>
 
-    <text style="font-size: 32px" x="240" y="354">40</text>
+    <text aria-hidden="true" style="font-size: 32px" x="240" y="354">40</text>
 
 </g>
 
@@ -3293,7 +3293,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(41, 1); } ">
     <rect data-route='41'
-        aria-label="41"
+        aria-label="Route 41"
         aria-details="Navigate to Route 41"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(41, 1) }"
@@ -3302,7 +3302,7 @@
         x="176" y="480">
     </rect>
 
-    <text style="font-size: 32px" x="208" y="514">41</text>
+    <text aria-hidden="true" style="font-size: 32px" x="208" y="514">41</text>
 
 </g>
 
@@ -3315,7 +3315,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(41, 1); } ">
     <rect data-route='41'
-        aria-label="41"
+        aria-label="Route 41"
         aria-details="Navigate to Route 41"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(41, 1) }"
@@ -3333,7 +3333,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(41, 1); } ">
     <rect data-route='41'
-        aria-label="41"
+        aria-label="Route 41"
         aria-details="Navigate to Route 41"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(41, 1) }"
@@ -3352,7 +3352,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(42, 1); } ">
     <rect data-route='42'
-        aria-label="42"
+        aria-label="Route 42"
         aria-details="Navigate to Route 42"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(42, 1) }"
@@ -3361,7 +3361,7 @@
         x="576" y="160">
     </rect>
 
-    <text style="font-size: 32px" x="656" y="194">42</text>
+    <text aria-hidden="true" style="font-size: 32px" x="656" y="194">42</text>
 
 </g>
 
@@ -3372,7 +3372,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(42, 1); } ">
     <rect data-route='42'
-        aria-label="42"
+        aria-label="Route 42"
         aria-details="Navigate to Route 42"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(42, 1) }"
@@ -3390,7 +3390,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(42, 1); } ">
     <rect data-route='42'
-        aria-label="42"
+        aria-label="Route 42"
         aria-details="Navigate to Route 42"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(42, 1) }"
@@ -3411,7 +3411,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(43, 1); } ">
     <rect data-route='43'
-        aria-label="43"
+        aria-label="Route 43"
         aria-details="Navigate to Route 43"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(43, 1) }"
@@ -3420,7 +3420,7 @@
         x="896" y="-48">
     </rect>
 
-    <text style="font-size: 32px" x="952" y="-14">43</text>
+    <text aria-hidden="true" style="font-size: 32px" x="952" y="-14">43</text>
 
 </g>
 
@@ -3432,7 +3432,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(44, 1); } ">
     <rect data-route='44'
-        aria-label="44"
+        aria-label="Route 44"
         aria-details="Navigate to Route 44"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(44, 1) }"
@@ -3441,7 +3441,7 @@
         x="944" y="160">
     </rect>
 
-    <text style="font-size: 32px" x="1008" y="194">44</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1008" y="194">44</text>
 
 </g>
 
@@ -3452,7 +3452,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(44, 1); } ">
     <rect data-route='44'
-        aria-label="44"
+        aria-label="Route 44"
         aria-details="Navigate to Route 44"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(44, 1) }"
@@ -3473,7 +3473,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(45, 1); } ">
     <rect data-route='45'
-        aria-label="45"
+        aria-label="Route 45"
         aria-details="Navigate to Route 45"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(45, 1) }"
@@ -3482,7 +3482,7 @@
         x="1120" y="240">
     </rect>
 
-    <text style="font-size: 32px" x="1176" y="274">45</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1176" y="274">45</text>
 
 </g>
 
@@ -3495,7 +3495,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(45, 1); } ">
     <rect data-route='45'
-        aria-label="45"
+        aria-label="Route 45"
         aria-details="Navigate to Route 45"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(45, 1) }"
@@ -3515,7 +3515,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(45, 1); } ">
     <rect data-route='45'
-        aria-label="45"
+        aria-label="Route 45"
         aria-details="Navigate to Route 45"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(45, 1) }"
@@ -3536,7 +3536,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(46, 1); } ">
     <rect data-route='46'
-        aria-label="46"
+        aria-label="Route 46"
         aria-details="Navigate to Route 46"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(46, 1) }"
@@ -3545,7 +3545,7 @@
         x="1040" y="432">
     </rect>
 
-    <text style="font-size: 32px" x="1120" y="466">46</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1120" y="466">46</text>
 
 </g>
 
@@ -3556,7 +3556,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(46, 1); } ">
     <rect data-route='46'
-        aria-label="46"
+        aria-label="Route 46"
         aria-details="Navigate to Route 46"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(46, 1) }"
@@ -3576,7 +3576,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(46, 1); } ">
     <rect data-route='46'
-        aria-label="46"
+        aria-label="Route 46"
         aria-details="Navigate to Route 46"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(46, 1) }"
@@ -3597,7 +3597,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(47, 1); } ">
     <rect data-route='47'
-        aria-label="47"
+        aria-label="Route 47"
         aria-details="Navigate to Route 47"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(47, 1) }"
@@ -3606,7 +3606,7 @@
         x="16" y="560">
     </rect>
 
-    <text style="font-size: 32px" x="56" y="594">47</text>
+    <text aria-hidden="true" style="font-size: 32px" x="56" y="594">47</text>
 
 </g>
 
@@ -3620,7 +3620,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(48, 1); } ">
     <rect data-route='48'
-        aria-label="48"
+        aria-label="Route 48"
         aria-details="Navigate to Route 48"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(48, 1) }"
@@ -3629,7 +3629,7 @@
         x="16" y="352">
     </rect>
 
-    <text style="font-size: 32px" x="104" y="386">48</text>
+    <text aria-hidden="true" style="font-size: 32px" x="104" y="386">48</text>
 
 </g>
 
@@ -3732,7 +3732,7 @@
         attr: { class: MapHelper.calculateTownCssClass('Goldenrod City') },
         ">
 </rect>
-    
+
     <!--Goldenrod City Extension-->
     
 
@@ -4344,7 +4344,7 @@
 
 </g>
 
-                            <g data-bind='visible: player.region == GameConstants.Region.hoenn'>
+                            <g data-bind="visible: player.region == GameConstants.Region.hoenn, attr: { 'aria-hidden': player.region != GameConstants.Region.hoenn }">
     <image width="1600" height="960" xlink:href="assets/images/hoenn.png" href="assets/images/hoenn.png"></image>
 
     <!-- ------ -->
@@ -4358,7 +4358,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(101, 2); } ">
     <rect data-route='101'
-        aria-label="101"
+        aria-label="Route 101"
         aria-details="Navigate to Route 101"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(101, 2) }"
@@ -4367,7 +4367,7 @@
         x="240" y="656">
     </rect>
 
-    <text style="font-size: 32px" x="240" y="686">101</text>
+    <text aria-hidden="true" style="font-size: 32px" x="240" y="686">101</text>
 
 </g>
 
@@ -4379,7 +4379,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(102, 2); } ">
     <rect data-route='102'
-        aria-label="102"
+        aria-label="Route 102"
         aria-details="Navigate to Route 102"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(102, 2) }"
@@ -4388,7 +4388,7 @@
         x="128" y="608">
     </rect>
 
-    <text style="font-size: 32px" x="152" y="642">102</text>
+    <text aria-hidden="true" style="font-size: 32px" x="152" y="642">102</text>
 
 </g>
 
@@ -4400,7 +4400,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(103, 2); } ">
     <rect data-route='103'
-        aria-label="103"
+        aria-label="Route 103"
         aria-details="Navigate to Route 103"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(103, 2) }"
@@ -4409,7 +4409,7 @@
         x="240" y="544">
     </rect>
 
-    <text style="font-size: 32px" x="328" y="578">103</text>
+    <text aria-hidden="true" style="font-size: 32px" x="328" y="578">103</text>
 
 </g>
 
@@ -4423,7 +4423,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(104, 2); } ">
     <rect data-route='104'
-        aria-label="104"
+        aria-label="Route 104"
         aria-details="Navigate to Route 104"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(104, 2) }"
@@ -4432,7 +4432,7 @@
         x="16" y="464">
     </rect>
 
-    <text style="font-size: 32px" x="64" y="498">104</text>
+    <text aria-hidden="true" style="font-size: 32px" x="64" y="498">104</text>
 
 </g>
 
@@ -4443,7 +4443,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(104, 2); } ">
     <rect data-route='104'
-        aria-label="104"
+        aria-label="Route 104"
         aria-details="Navigate to Route 104"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(104, 2) }"
@@ -4464,7 +4464,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(105, 2); } ">
     <rect data-route='105'
-        aria-label="105"
+        aria-label="Route 105"
         aria-details="Navigate to Route 105"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(105, 2) }"
@@ -4473,7 +4473,7 @@
         x="16" y="608">
     </rect>
 
-    <text style="font-size: 32px" x="72" y="642">105</text>
+    <text aria-hidden="true" style="font-size: 32px" x="72" y="642">105</text>
 
 </g>
 
@@ -4485,7 +4485,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(106, 2); } ">
     <rect data-route='106'
-        aria-label="106"
+        aria-label="Route 106"
         aria-details="Navigate to Route 106"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(106, 2) }"
@@ -4494,7 +4494,7 @@
         x="16" y="816">
     </rect>
 
-    <text style="font-size: 32px" x="80" y="850">106</text>
+    <text aria-hidden="true" style="font-size: 32px" x="80" y="850">106</text>
 
 </g>
 
@@ -4506,7 +4506,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(107, 2); } ">
     <rect data-route='107'
-        aria-label="107"
+        aria-label="Route 107"
         aria-details="Navigate to Route 107"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(107, 2) }"
@@ -4515,7 +4515,7 @@
         x="192" y="880">
     </rect>
 
-    <text style="font-size: 32px" x="248" y="914">107</text>
+    <text aria-hidden="true" style="font-size: 32px" x="248" y="914">107</text>
 
 </g>
 
@@ -4527,7 +4527,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(108, 2); } ">
     <rect data-route='108'
-        aria-label="108"
+        aria-label="Route 108"
         aria-details="Navigate to Route 108"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(108, 2) }"
@@ -4536,7 +4536,7 @@
         x="352" y="880">
     </rect>
 
-    <text style="font-size: 32px" x="408" y="914">108</text>
+    <text aria-hidden="true" style="font-size: 32px" x="408" y="914">108</text>
 
 </g>
 
@@ -4550,7 +4550,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(109, 2); } ">
     <rect data-route='109'
-        aria-label="109"
+        aria-label="Route 109"
         aria-details="Navigate to Route 109"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(109, 2) }"
@@ -4559,7 +4559,7 @@
         x="464" y="720">
     </rect>
 
-    <text style="font-size: 32px" x="496" y="754">109</text>
+    <text aria-hidden="true" style="font-size: 32px" x="496" y="754">109</text>
 
 </g>
 
@@ -4573,7 +4573,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(110, 2); } ">
     <rect data-route='110'
-        aria-label="110"
+        aria-label="Route 110"
         aria-details="Navigate to Route 110"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(110, 2) }"
@@ -4582,7 +4582,7 @@
         x="464" y="384">
     </rect>
 
-    <text style="font-size: 32px" x="532" y="418">110</text>
+    <text aria-hidden="true" style="font-size: 32px" x="532" y="418">110</text>
 
 </g>
 
@@ -4596,7 +4596,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(111, 2); } ">
     <rect data-route='111'
-        aria-label="111"
+        aria-label="Route 111"
         aria-details="Navigate to Route 111"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(111, 2) }"
@@ -4605,7 +4605,7 @@
         x="464" y="16">
     </rect>
 
-    <text style="font-size: 32px" x="588" y="50">111</text>
+    <text aria-hidden="true" style="font-size: 32px" x="588" y="50">111</text>
 
 </g>
 
@@ -4617,7 +4617,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(112, 2); } ">
     <rect data-route='112'
-        aria-label="112"
+        aria-label="Route 112"
         aria-details="Navigate to Route 112"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(112, 2) }"
@@ -4626,7 +4626,7 @@
         x="352" y="272">
     </rect>
 
-    <text style="font-size: 32px" x="384" y="306">112</text>
+    <text aria-hidden="true" style="font-size: 32px" x="384" y="306">112</text>
 
 </g>
 
@@ -4638,7 +4638,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(113, 2); } ">
     <rect data-route='113'
-        aria-label="113"
+        aria-label="Route 113"
         aria-details="Navigate to Route 113"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(113, 2) }"
@@ -4647,7 +4647,7 @@
         x="240" y="64">
     </rect>
 
-    <text style="font-size: 32px" x="328" y="98">113</text>
+    <text aria-hidden="true" style="font-size: 32px" x="328" y="98">113</text>
 
 </g>
 
@@ -4661,7 +4661,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(114, 2); } ">
     <rect data-route='114'
-        aria-label="114"
+        aria-label="Route 114"
         aria-details="Navigate to Route 114"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(114, 2) }"
@@ -4670,7 +4670,7 @@
         x="112" y="16">
     </rect>
 
-    <text style="font-size: 32px" x="160" y="50">114</text>
+    <text aria-hidden="true" style="font-size: 32px" x="160" y="50">114</text>
 
 </g>
 
@@ -4681,7 +4681,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(114, 2); } ">
     <rect data-route='114'
-        aria-label="114"
+        aria-label="Route 114"
         aria-details="Navigate to Route 114"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(114, 2) }"
@@ -4702,7 +4702,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(115, 2); } ">
     <rect data-route='115'
-        aria-label="115"
+        aria-label="Route 115"
         aria-details="Navigate to Route 115"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(115, 2) }"
@@ -4711,7 +4711,7 @@
         x="16" y="160">
     </rect>
 
-    <text style="font-size: 32px" x="36" y="194">115</text>
+    <text aria-hidden="true" style="font-size: 32px" x="36" y="194">115</text>
 
 </g>
 
@@ -4722,7 +4722,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(115, 2); } ">
     <rect data-route='115'
-        aria-label="115"
+        aria-label="Route 115"
         aria-details="Navigate to Route 115"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(115, 2) }"
@@ -4741,7 +4741,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(116, 2); } ">
     <rect data-route='116'
-        aria-label="116"
+        aria-label="Route 116"
         aria-details="Navigate to Route 116"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(116, 2) }"
@@ -4750,7 +4750,7 @@
         x="80" y="336">
     </rect>
 
-    <text style="font-size: 32px" x="120" y="370">116</text>
+    <text aria-hidden="true" style="font-size: 32px" x="120" y="370">116</text>
 
 </g>
 
@@ -4761,7 +4761,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(116, 2); } ">
     <rect data-route='116'
-        aria-label="116"
+        aria-label="Route 116"
         aria-details="Navigate to Route 116"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(116, 2) }"
@@ -4780,7 +4780,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(117, 2); } ">
     <rect data-route='117'
-        aria-label="117"
+        aria-label="Route 117"
         aria-details="Navigate to Route 117"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(117, 2) }"
@@ -4789,7 +4789,7 @@
         x="288" y="384">
     </rect>
 
-    <text style="font-size: 32px" x="336" y="418">117</text>
+    <text aria-hidden="true" style="font-size: 32px" x="336" y="418">117</text>
 
 </g>
 
@@ -4801,7 +4801,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(118, 2); } ">
     <rect data-route='118'
-        aria-label="118"
+        aria-label="Route 118"
         aria-details="Navigate to Route 118"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(118, 2) }"
@@ -4810,7 +4810,7 @@
         x="576" y="384">
     </rect>
 
-    <text style="font-size: 32px" x="600" y="418">118</text>
+    <text aria-hidden="true" style="font-size: 32px" x="600" y="418">118</text>
 
 </g>
 
@@ -4824,7 +4824,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(119, 2); } ">
     <rect data-route='119'
-        aria-label="119"
+        aria-label="Route 119"
         aria-details="Navigate to Route 119"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(119, 2) }"
@@ -4833,7 +4833,7 @@
         x="624" y="16">
     </rect>
 
-    <text style="font-size: 32px" x="760" y="50">119</text>
+    <text aria-hidden="true" style="font-size: 32px" x="760" y="50">119</text>
 
 </g>
 
@@ -4847,7 +4847,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(120, 2); } ">
     <rect data-route='120'
-        aria-label="120"
+        aria-label="Route 120"
         aria-details="Navigate to Route 120"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(120, 2) }"
@@ -4856,7 +4856,7 @@
         x="736" y="16">
     </rect>
 
-    <text style="font-size: 32px" x="816" y="50">120</text>
+    <text aria-hidden="true" style="font-size: 32px" x="816" y="50">120</text>
 
 </g>
 
@@ -4868,7 +4868,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(121, 2); } ">
     <rect data-route='121'
-        aria-label="121"
+        aria-label="Route 121"
         aria-details="Navigate to Route 121"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(121, 2) }"
@@ -4877,7 +4877,7 @@
         x="784" y="224">
     </rect>
 
-    <text style="font-size: 32px" x="888" y="258">121</text>
+    <text aria-hidden="true" style="font-size: 32px" x="888" y="258">121</text>
 
 </g>
 
@@ -4891,7 +4891,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(122, 2); } ">
     <rect data-route='122'
-        aria-label="122"
+        aria-label="Route 122"
         aria-details="Navigate to Route 122"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(122, 2) }"
@@ -4900,7 +4900,7 @@
         x="880" y="224">
     </rect>
 
-    <text style="font-size: 32px" x="912" y="258">122</text>
+    <text aria-hidden="true" style="font-size: 32px" x="912" y="258">122</text>
 
 </g>
 
@@ -4911,7 +4911,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(122, 2); } ">
     <rect data-route='122'
-        aria-label="122"
+        aria-label="Route 122"
         aria-details="Navigate to Route 122"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(122, 2) }"
@@ -4929,7 +4929,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(122, 2); } ">
     <rect data-route='122'
-        aria-label="122"
+        aria-label="Route 122"
         aria-details="Navigate to Route 122"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(122, 2) }"
@@ -4948,7 +4948,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(123, 2); } ">
     <rect data-route='123'
-        aria-label="123"
+        aria-label="Route 123"
         aria-details="Navigate to Route 123"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(123, 2) }"
@@ -4957,7 +4957,7 @@
         x="672" y="384">
     </rect>
 
-    <text style="font-size: 32px" x="816" y="418">123</text>
+    <text aria-hidden="true" style="font-size: 32px" x="816" y="418">123</text>
 
 </g>
 
@@ -4969,7 +4969,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(124, 2); } ">
     <rect data-route='124'
-        aria-label="124"
+        aria-label="Route 124"
         aria-details="Navigate to Route 124"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(124, 2) }"
@@ -4978,7 +4978,7 @@
         x="1184" y="224">
     </rect>
 
-    <text style="font-size: 32px" x="1232" y="314">124</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1232" y="314">124</text>
 
 </g>
 
@@ -4989,7 +4989,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(124, 2); } ">
     <rect data-route='124'
-        aria-label="124"
+        aria-label="Route 124"
         aria-details="Navigate to Route 124"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(124, 2) }"
@@ -5007,7 +5007,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(124, 2); } ">
     <rect data-route='124'
-        aria-label="124"
+        aria-label="Route 124"
         aria-details="Navigate to Route 124"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(124, 2) }"
@@ -5026,7 +5026,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(125, 2); } ">
     <rect data-route='125'
-        aria-label="125"
+        aria-label="Route 125"
         aria-details="Navigate to Route 125"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(125, 2) }"
@@ -5035,7 +5035,7 @@
         x="1328" y="160">
     </rect>
 
-    <text style="font-size: 32px" x="1384" y="194">125</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1384" y="194">125</text>
 
 </g>
 
@@ -5046,7 +5046,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(125, 2); } ">
     <rect data-route='125'
-        aria-label="125"
+        aria-label="Route 125"
         aria-details="Navigate to Route 125"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(125, 2) }"
@@ -5064,7 +5064,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(125, 2); } ">
     <rect data-route='125'
-        aria-label="125"
+        aria-label="Route 125"
         aria-details="Navigate to Route 125"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(125, 2) }"
@@ -5082,7 +5082,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(125, 2); } ">
     <rect data-route='125'
-        aria-label="125"
+        aria-label="Route 125"
         aria-details="Navigate to Route 125"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(125, 2) }"
@@ -5100,7 +5100,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(125, 2); } ">
     <rect data-route='125'
-        aria-label="125"
+        aria-label="Route 125"
         aria-details="Navigate to Route 125"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(125, 2) }"
@@ -5119,7 +5119,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(126, 2); } ">
     <rect data-route='126'
-        aria-label="126"
+        aria-label="Route 126"
         aria-details="Navigate to Route 126"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(126, 2) }"
@@ -5128,7 +5128,7 @@
         x="1200" y="384">
     </rect>
 
-    <text style="font-size: 32px" x="1240" y="458">126</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1240" y="458">126</text>
 
 </g>
 
@@ -5139,7 +5139,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(126, 2); } ">
     <rect data-route='126'
-        aria-label="126"
+        aria-label="Route 126"
         aria-details="Navigate to Route 126"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(126, 2) }"
@@ -5157,7 +5157,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(126, 2); } ">
     <rect data-route='126'
-        aria-label="126"
+        aria-label="Route 126"
         aria-details="Navigate to Route 126"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(126, 2) }"
@@ -5175,7 +5175,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(126, 2); } ">
     <rect data-route='126'
-        aria-label="126"
+        aria-label="Route 126"
         aria-details="Navigate to Route 126"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(126, 2) }"
@@ -5193,7 +5193,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(126, 2); } ">
     <rect data-route='126'
-        aria-label="126"
+        aria-label="Route 126"
         aria-details="Navigate to Route 126"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(126, 2) }"
@@ -5212,7 +5212,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(127, 2); } ">
     <rect data-route='127'
-        aria-label="127"
+        aria-label="Route 127"
         aria-details="Navigate to Route 127"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(127, 2) }"
@@ -5221,7 +5221,7 @@
         x="1328" y="384">
     </rect>
 
-    <text style="font-size: 32px" x="1360" y="506">127</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1360" y="506">127</text>
 
 </g>
 
@@ -5232,7 +5232,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(127, 2); } ">
     <rect data-route='127'
-        aria-label="127"
+        aria-label="Route 127"
         aria-details="Navigate to Route 127"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(127, 2) }"
@@ -5250,7 +5250,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(127, 2); } ">
     <rect data-route='127'
-        aria-label="127"
+        aria-label="Route 127"
         aria-details="Navigate to Route 127"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(127, 2) }"
@@ -5268,7 +5268,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(127, 2); } ">
     <rect data-route='127'
-        aria-label="127"
+        aria-label="Route 127"
         aria-details="Navigate to Route 127"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(127, 2) }"
@@ -5287,7 +5287,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(128, 2); } ">
     <rect data-route='128'
-        aria-label="128"
+        aria-label="Route 128"
         aria-details="Navigate to Route 128"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(128, 2) }"
@@ -5296,7 +5296,7 @@
         x="1392" y="608">
     </rect>
 
-    <text style="font-size: 32px" x="1408" y="642">128</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1408" y="642">128</text>
 
 </g>
 
@@ -5308,7 +5308,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(129, 2); } ">
     <rect data-route='129'
-        aria-label="129"
+        aria-label="Route 129"
         aria-details="Navigate to Route 129"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(129, 2) }"
@@ -5317,7 +5317,7 @@
         x="1344" y="656">
     </rect>
 
-    <text style="font-size: 32px" x="1392" y="690">129</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1392" y="690">129</text>
 
 </g>
 
@@ -5329,7 +5329,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(130, 2); } ">
     <rect data-route='130'
-        aria-label="130"
+        aria-label="Route 130"
         aria-details="Navigate to Route 130"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(130, 2) }"
@@ -5338,7 +5338,7 @@
         x="1200" y="656">
     </rect>
 
-    <text style="font-size: 32px" x="1248" y="690">130</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1248" y="690">130</text>
 
 </g>
 
@@ -5350,7 +5350,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(131, 2); } ">
     <rect data-route='131'
-        aria-label="131"
+        aria-label="Route 131"
         aria-details="Navigate to Route 131"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(131, 2) }"
@@ -5359,7 +5359,7 @@
         x="1056" y="656">
     </rect>
 
-    <text style="font-size: 32px" x="1104" y="690">131</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1104" y="690">131</text>
 
 </g>
 
@@ -5371,7 +5371,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(132, 2); } ">
     <rect data-route='132'
-        aria-label="132"
+        aria-label="Route 132"
         aria-details="Navigate to Route 132"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(132, 2) }"
@@ -5380,7 +5380,7 @@
         x="832" y="656">
     </rect>
 
-    <text style="font-size: 32px" x="888" y="690">132</text>
+    <text aria-hidden="true" style="font-size: 32px" x="888" y="690">132</text>
 
 </g>
 
@@ -5392,7 +5392,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(133, 2); } ">
     <rect data-route='133'
-        aria-label="133"
+        aria-label="Route 133"
         aria-details="Navigate to Route 133"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(133, 2) }"
@@ -5401,7 +5401,7 @@
         x="688" y="656">
     </rect>
 
-    <text style="font-size: 32px" x="736" y="690">133</text>
+    <text aria-hidden="true" style="font-size: 32px" x="736" y="690">133</text>
 
 </g>
 
@@ -5413,7 +5413,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(134, 2); } ">
     <rect data-route='134'
-        aria-label="134"
+        aria-label="Route 134"
         aria-details="Navigate to Route 134"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(134, 2) }"
@@ -5422,7 +5422,7 @@
         x="528" y="656">
     </rect>
 
-    <text style="font-size: 32px" x="584" y="690">134</text>
+    <text aria-hidden="true" style="font-size: 32px" x="584" y="690">134</text>
 
 </g>
 
@@ -5962,7 +5962,7 @@
     data-bind="click:function(){MapHelper.moveToTown('Mt. Chimney')},
         attr: { class: MapHelper.calculateTownCssClass('Mt. Chimney') }">
 </rect>
-    
+
     <!--Weather Institute-->
     
 
@@ -6025,7 +6025,7 @@
     data-bind="click:function(){MapHelper.moveToTown('Magma Hideout')},
         attr: { class: MapHelper.calculateTownCssClass('Magma Hideout') }">
 </rect>
-     
+
     <!--Aqua Hideout-->
     
 
@@ -6041,7 +6041,7 @@
     data-bind="click:function(){MapHelper.moveToTown('Aqua Hideout')},
         attr: { class: MapHelper.calculateTownCssClass('Aqua Hideout') }">
 </rect>
-     
+
     <!--Aqua Hideout Extension-->
     
 
@@ -6236,7 +6236,7 @@
 
 </g>
 
-                            <g data-bind='visible: player.region == GameConstants.Region.sinnoh'>
+                            <g data-bind="visible: player.region == GameConstants.Region.sinnoh, attr: { 'aria-hidden': player.region != GameConstants.Region.sinnoh }">
     <image width="1600" height="960" xlink:href="assets/images/sinnoh.png" href="assets/images/sinnoh.png"></image>
 
     <!-- ------ -->
@@ -6250,7 +6250,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(201, 3); } ">
     <rect data-route='201'
-        aria-label="201"
+        aria-label="Route 201"
         aria-details="Navigate to Route 201"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(201, 3) }"
@@ -6268,7 +6268,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(201, 3); } ">
     <rect data-route='201'
-        aria-label="201"
+        aria-label="Route 201"
         aria-details="Navigate to Route 201"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(201, 3) }"
@@ -6277,7 +6277,7 @@
         x="192" y="800">
     </rect>
 
-    <text style="font-size: 32px" x="168" y="834">201</text>
+    <text aria-hidden="true" style="font-size: 32px" x="168" y="834">201</text>
 
 </g>
 
@@ -6291,7 +6291,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(202, 3); } ">
     <rect data-route='202'
-        aria-label="202"
+        aria-label="Route 202"
         aria-details="Navigate to Route 202"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(202, 3) }"
@@ -6300,7 +6300,7 @@
         x="288" y="672">
     </rect>
 
-    <text style="font-size: 32px" x="296" y="706">202</text>
+    <text aria-hidden="true" style="font-size: 32px" x="296" y="706">202</text>
 
 </g>
 
@@ -6312,7 +6312,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(203, 3); } ">
     <rect data-route='203'
-        aria-label="203"
+        aria-label="Route 203"
         aria-details="Navigate to Route 203"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(203, 3) }"
@@ -6321,7 +6321,7 @@
         x="368" y="672">
     </rect>
 
-    <text style="font-size: 32px" x="384" y="706">203</text>
+    <text aria-hidden="true" style="font-size: 32px" x="384" y="706">203</text>
 
 </g>
 
@@ -6335,7 +6335,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(204, 3); } ">
     <rect data-route='204'
-        aria-label="204"
+        aria-label="Route 204"
         aria-details="Navigate to Route 204"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(204, 3) }"
@@ -6344,7 +6344,7 @@
         x="288" y="528">
     </rect>
 
-    <text style="font-size: 32px" x="300" y="562">204</text>
+    <text aria-hidden="true" style="font-size: 32px" x="300" y="562">204</text>
 
 </g>
 
@@ -6355,7 +6355,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(204, 3); } ">
     <rect data-route='204'
-        aria-label="204"
+        aria-label="Route 204"
         aria-details="Navigate to Route 204"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(204, 3) }"
@@ -6374,7 +6374,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(205, 3); } ">
     <rect data-route='205'
-        aria-label="205"
+        aria-label="Route 205"
         aria-details="Navigate to Route 205"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(205, 3) }"
@@ -6383,7 +6383,7 @@
         x="352" y="432">
     </rect>
 
-    <text style="font-size: 32px" x="400" y="466">205</text>
+    <text aria-hidden="true" style="font-size: 32px" x="400" y="466">205</text>
 
 </g>
 
@@ -6394,7 +6394,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(205, 3); } ">
     <rect data-route='205'
-        aria-label="205"
+        aria-label="Route 205"
         aria-details="Navigate to Route 205"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(205, 3) }"
@@ -6412,7 +6412,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(205, 3); } ">
     <rect data-route='205'
-        aria-label="205"
+        aria-label="Route 205"
         aria-details="Navigate to Route 205"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(205, 3) }"
@@ -6430,7 +6430,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(205, 3); } ">
     <rect data-route='205'
-        aria-label="205"
+        aria-label="Route 205"
         aria-details="Navigate to Route 205"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(205, 3) }"
@@ -6451,7 +6451,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(206, 3); } ">
     <rect data-route='206'
-        aria-label="206"
+        aria-label="Route 206"
         aria-details="Navigate to Route 206"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(206, 3) }"
@@ -6460,7 +6460,7 @@
         x="512" y="432">
     </rect>
 
-    <text style="font-size: 32px" x="520" y="466">206</text>
+    <text aria-hidden="true" style="font-size: 32px" x="520" y="466">206</text>
 
 </g>
 
@@ -6473,7 +6473,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(206, 3); } ">
     <rect data-route='206'
-        aria-label="206"
+        aria-label="Route 206"
         aria-details="Navigate to Route 206"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(206, 3) }"
@@ -6492,7 +6492,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(207, 3); } ">
     <rect data-route='207'
-        aria-label="207"
+        aria-label="Route 207"
         aria-details="Navigate to Route 207"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(207, 3) }"
@@ -6501,7 +6501,7 @@
         x="512" y="656">
     </rect>
 
-    <text style="font-size: 32px" x="536" y="690">207</text>
+    <text aria-hidden="true" style="font-size: 32px" x="536" y="690">207</text>
 
 </g>
 
@@ -6513,7 +6513,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(208, 3); } ">
     <rect data-route='208'
-        aria-label="208"
+        aria-label="Route 208"
         aria-details="Navigate to Route 208"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(208, 3) }"
@@ -6522,7 +6522,7 @@
         x="608" y="656">
     </rect>
 
-    <text style="font-size: 32px" x="632" y="690">208</text>
+    <text aria-hidden="true" style="font-size: 32px" x="632" y="690">208</text>
 
 </g>
 
@@ -6534,7 +6534,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(208, 3); } ">
     <rect data-route='208'
-        aria-label="208"
+        aria-label="Route 208"
         aria-details="Navigate to Route 208"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(208, 3) }"
@@ -6555,7 +6555,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(209, 3); } ">
     <rect data-route='209'
-        aria-label="209"
+        aria-label="Route 209"
         aria-details="Navigate to Route 209"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(209, 3) }"
@@ -6564,7 +6564,7 @@
         x="864" y="560">
     </rect>
 
-    <text style="font-size: 32px" x="888" y="594">209</text>
+    <text aria-hidden="true" style="font-size: 32px" x="888" y="594">209</text>
 
 </g>
 
@@ -6576,7 +6576,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(209, 3); } ">
     <rect data-route='209'
-        aria-label="209"
+        aria-label="Route 209"
         aria-details="Navigate to Route 209"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(209, 3) }"
@@ -6595,7 +6595,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(209, 3); } ">
     <rect data-route='209'
-        aria-label="209"
+        aria-label="Route 209"
         aria-details="Navigate to Route 209"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(209, 3) }"
@@ -6616,7 +6616,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(210, 3); } ">
     <rect data-route='210'
-        aria-label="210"
+        aria-label="Route 210"
         aria-details="Navigate to Route 210"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(210, 3) }"
@@ -6635,7 +6635,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(210, 3); } ">
     <rect data-route='210'
-        aria-label="210"
+        aria-label="Route 210"
         aria-details="Navigate to Route 210"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(210, 3) }"
@@ -6644,7 +6644,7 @@
         x="816" y="432">
     </rect>
 
-    <text style="font-size: 32px" x="840" y="466">210</text>
+    <text aria-hidden="true" style="font-size: 32px" x="840" y="466">210</text>
 
 </g>
 
@@ -6656,7 +6656,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(211, 3); } ">
     <rect data-route='211'
-        aria-label="211"
+        aria-label="Route 211"
         aria-details="Navigate to Route 211"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(211, 3) }"
@@ -6665,7 +6665,7 @@
         x="560" y="432">
     </rect>
 
-    <text style="font-size: 32px" x="568" y="466">211</text>
+    <text aria-hidden="true" style="font-size: 32px" x="568" y="466">211</text>
 
 </g>
 
@@ -6677,7 +6677,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(211, 3); } ">
     <rect data-route='211'
-        aria-label="211"
+        aria-label="Route 211"
         aria-details="Navigate to Route 211"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(211, 3) }"
@@ -6696,7 +6696,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(212, 3); } ">
     <rect data-route='212'
-        aria-label="212"
+        aria-label="Route 212"
         aria-details="Navigate to Route 212"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(212, 3) }"
@@ -6705,7 +6705,7 @@
         x="752" y="816">
     </rect>
 
-    <text style="font-size: 32px" x="824" y="850">212</text>
+    <text aria-hidden="true" style="font-size: 32px" x="824" y="850">212</text>
 
 </g>
 
@@ -6717,7 +6717,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(212, 3); } ">
     <rect data-route='212'
-        aria-label="212"
+        aria-label="Route 212"
         aria-details="Navigate to Route 212"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(212, 3) }"
@@ -6736,7 +6736,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(213, 3); } ">
     <rect data-route='213'
-        aria-label="213"
+        aria-label="Route 213"
         aria-details="Navigate to Route 213"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(213, 3) }"
@@ -6745,7 +6745,7 @@
         x="1008" y="816">
     </rect>
 
-    <text style="font-size: 32px" x="1064" y="850">213</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1064" y="850">213</text>
 
 </g>
 
@@ -6759,7 +6759,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(214, 3); } ">
     <rect data-route='214'
-        aria-label="214"
+        aria-label="Route 214"
         aria-details="Navigate to Route 214"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(214, 3) }"
@@ -6768,7 +6768,7 @@
         x="1120" y="480">
     </rect>
 
-    <text style="font-size: 32px" x="1240" y="514">214</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1240" y="514">214</text>
 
 </g>
 
@@ -6780,7 +6780,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(214, 3); } ">
     <rect data-route='214'
-        aria-label="214"
+        aria-label="Route 214"
         aria-details="Navigate to Route 214"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(214, 3) }"
@@ -6799,7 +6799,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(215, 3); } ">
     <rect data-route='215'
-        aria-label="215"
+        aria-label="Route 215"
         aria-details="Navigate to Route 215"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(215, 3) }"
@@ -6808,7 +6808,7 @@
         x="912" y="480">
     </rect>
 
-    <text style="font-size: 32px" x="944" y="514">215</text>
+    <text aria-hidden="true" style="font-size: 32px" x="944" y="514">215</text>
 
 </g>
 
@@ -6820,7 +6820,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(216, 3); } ">
     <rect data-route='216'
-        aria-label="216"
+        aria-label="Route 216"
         aria-details="Navigate to Route 216"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(216, 3) }"
@@ -6829,7 +6829,7 @@
         x="480" y="272">
     </rect>
 
-    <text style="font-size: 32px" x="536" y="306">216</text>
+    <text aria-hidden="true" style="font-size: 32px" x="536" y="306">216</text>
 
 </g>
 
@@ -6841,7 +6841,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(216, 3); } ">
     <rect data-route='216'
-        aria-label="216"
+        aria-label="Route 216"
         aria-details="Navigate to Route 216"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(216, 3) }"
@@ -6862,7 +6862,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(217, 3); } ">
     <rect data-route='217'
-        aria-label="217"
+        aria-label="Route 217"
         aria-details="Navigate to Route 217"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(217, 3) }"
@@ -6871,7 +6871,7 @@
         x="480" y="32">
     </rect>
 
-    <text style="font-size: 32px" x="552" y="66">217</text>
+    <text aria-hidden="true" style="font-size: 32px" x="552" y="66">217</text>
 
 </g>
 
@@ -6883,7 +6883,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(217, 3); } ">
     <rect data-route='217'
-        aria-label="217"
+        aria-label="Route 217"
         aria-details="Navigate to Route 217"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(217, 3) }"
@@ -6902,7 +6902,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(217, 3); } ">
     <rect data-route='217'
-        aria-label="217"
+        aria-label="Route 217"
         aria-details="Navigate to Route 217"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(217, 3) }"
@@ -6921,7 +6921,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(218, 3); } ">
     <rect data-route='218'
-        aria-label="218"
+        aria-label="Route 218"
         aria-details="Navigate to Route 218"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(218, 3) }"
@@ -6930,7 +6930,7 @@
         x="144" y="672">
     </rect>
 
-    <text style="font-size: 32px" x="160" y="706">218</text>
+    <text aria-hidden="true" style="font-size: 32px" x="160" y="706">218</text>
 
 </g>
 
@@ -6944,7 +6944,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(219, 3); } ">
     <rect data-route='219'
-        aria-label="219"
+        aria-label="Route 219"
         aria-details="Navigate to Route 219"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(219, 3) }"
@@ -6953,7 +6953,7 @@
         x="288" y="800">
     </rect>
 
-    <text style="font-size: 32px" x="304" y="834">219</text>
+    <text aria-hidden="true" style="font-size: 32px" x="304" y="834">219</text>
 
 </g>
 
@@ -6965,7 +6965,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(220, 3); } ">
     <rect data-route='220'
-        aria-label="220"
+        aria-label="Route 220"
         aria-details="Navigate to Route 220"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(220, 3) }"
@@ -6974,7 +6974,7 @@
         x="336" y="880">
     </rect>
 
-    <text style="font-size: 32px" x="360" y="914">220</text>
+    <text aria-hidden="true" style="font-size: 32px" x="360" y="914">220</text>
 
 </g>
 
@@ -6986,7 +6986,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(221, 3); } ">
     <rect data-route='221'
-        aria-label="221"
+        aria-label="Route 221"
         aria-details="Navigate to Route 221"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(221, 3) }"
@@ -6995,7 +6995,7 @@
         x="432" y="880">
     </rect>
 
-    <text style="font-size: 32px" x="456" y="914">221</text>
+    <text aria-hidden="true" style="font-size: 32px" x="456" y="914">221</text>
 
 </g>
 
@@ -7007,7 +7007,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(222, 3); } ">
     <rect data-route='222'
-        aria-label="222"
+        aria-label="Route 222"
         aria-details="Navigate to Route 222"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(222, 3) }"
@@ -7016,7 +7016,7 @@
         x="1168" y="784">
     </rect>
 
-    <text style="font-size: 32px" x="1184" y="818">222</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1184" y="818">222</text>
 
 </g>
 
@@ -7030,7 +7030,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(223, 3); } ">
     <rect data-route='223'
-        aria-label="223"
+        aria-label="Route 223"
         aria-details="Navigate to Route 223"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(223, 3) }"
@@ -7039,7 +7039,7 @@
         x="1344" y="496">
     </rect>
 
-    <text style="font-size: 32px" x="1432" y="530">223</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1432" y="530">223</text>
 
 </g>
 
@@ -7053,7 +7053,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(224, 3); } ">
     <rect data-route='224'
-        aria-label="224"
+        aria-label="Route 224"
         aria-details="Navigate to Route 224"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(224, 3) }"
@@ -7062,7 +7062,7 @@
         x="1456" y="336">
     </rect>
 
-    <text style="font-size: 32px" x="1472" y="370">224</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1472" y="370">224</text>
 
 </g>
 
@@ -7075,7 +7075,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(224, 3); } ">
     <rect data-route='224'
-        aria-label="224"
+        aria-label="Route 224"
         aria-details="Navigate to Route 224"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(224, 3) }"
@@ -7095,7 +7095,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(224, 3); } ">
     <rect data-route='224'
-        aria-label="224"
+        aria-label="Route 224"
         aria-details="Navigate to Route 224"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(224, 3) }"
@@ -7116,7 +7116,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(225, 3); } ">
     <rect data-route='225'
-        aria-label="225"
+        aria-label="Route 225"
         aria-details="Navigate to Route 225"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(225, 3) }"
@@ -7125,7 +7125,7 @@
         x="960" y="64">
     </rect>
 
-    <text style="font-size: 32px" x="988" y="98">225</text>
+    <text aria-hidden="true" style="font-size: 32px" x="988" y="98">225</text>
 
 </g>
 
@@ -7138,7 +7138,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(225, 3); } ">
     <rect data-route='225'
-        aria-label="225"
+        aria-label="Route 225"
         aria-details="Navigate to Route 225"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(225, 3) }"
@@ -7157,7 +7157,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(226, 3); } ">
     <rect data-route='226'
-        aria-label="226"
+        aria-label="Route 226"
         aria-details="Navigate to Route 226"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(226, 3) }"
@@ -7166,7 +7166,7 @@
         x="1088" y="112">
     </rect>
 
-    <text style="font-size: 32px" x="1136" y="146">226</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1136" y="146">226</text>
 
 </g>
 
@@ -7180,7 +7180,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(227, 3); } ">
     <rect data-route='227'
-        aria-label="227"
+        aria-label="Route 227"
         aria-details="Navigate to Route 227"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(227, 3) }"
@@ -7189,7 +7189,7 @@
         x="1184" y="0">
     </rect>
 
-    <text style="font-size: 32px" x="1192" y="34">227</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1192" y="34">227</text>
 
 </g>
 
@@ -7203,7 +7203,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(228, 3); } ">
     <rect data-route='228'
-        aria-label="228"
+        aria-label="Route 228"
         aria-details="Navigate to Route 228"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(228, 3) }"
@@ -7212,7 +7212,7 @@
         x="1232" y="64">
     </rect>
 
-    <text style="font-size: 32px" x="1272" y="98">228</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1272" y="98">228</text>
 
 </g>
 
@@ -7224,7 +7224,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(229, 3); } ">
     <rect data-route='229'
-        aria-label="229"
+        aria-label="Route 229"
         aria-details="Navigate to Route 229"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(229, 3) }"
@@ -7233,7 +7233,7 @@
         x="1232" y="240">
     </rect>
 
-    <text style="font-size: 32px" x="1256" y="274">229</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1256" y="274">229</text>
 
 </g>
 
@@ -7245,7 +7245,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(230, 3); } ">
     <rect data-route='230'
-        aria-label="230"
+        aria-label="Route 230"
         aria-details="Navigate to Route 230"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(230, 3) }"
@@ -7254,7 +7254,7 @@
         x="1040" y="240">
     </rect>
 
-    <text style="font-size: 32px" x="1112" y="274">230</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1112" y="274">230</text>
 
 </g>
 
@@ -8149,7 +8149,7 @@
 </rect>
 </g>
 
-                            <g data-bind='visible: player.region == GameConstants.Region.unova'>
+                            <g data-bind="visible: player.region == GameConstants.Region.unova, attr: { 'aria-hidden': player.region != GameConstants.Region.unova }">
     <image width="1600" height="960" xlink:href="assets/images/unova.png" href="assets/images/unova.png"></image>
 
     <!-- ------ -->
@@ -8165,7 +8165,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(1, 4); } ">
     <rect data-route='1'
-        aria-label="1"
+        aria-label="Route 1"
         aria-details="Navigate to Route 1"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(1, 4) }"
@@ -8174,7 +8174,7 @@
         x="1392" y="768">
     </rect>
 
-    <text style="font-size: 32px" x="1408" y="802">1</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1408" y="802">1</text>
 
 </g>
 
@@ -8188,7 +8188,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(2, 4); } ">
     <rect data-route='2'
-        aria-label="2"
+        aria-label="Route 2"
         aria-details="Navigate to Route 2"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(2, 4) }"
@@ -8197,7 +8197,7 @@
         x="1392" y="640">
     </rect>
 
-    <text style="font-size: 32px" x="1416" y="674">2</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1416" y="674">2</text>
 
 </g>
 
@@ -8209,7 +8209,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(3, 4); } ">
     <rect data-route='3'
-        aria-label="3"
+        aria-label="Route 3"
         aria-details="Navigate to Route 3"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(3, 4) }"
@@ -8218,7 +8218,7 @@
         x="1280" y="640">
     </rect>
 
-    <text style="font-size: 32px" x="1320" y="674">3</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1320" y="674">3</text>
 
 </g>
 
@@ -8232,7 +8232,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(4, 4); } ">
     <rect data-route='4'
-        aria-label="4"
+        aria-label="Route 4"
         aria-details="Navigate to Route 4"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(4, 4) }"
@@ -8241,7 +8241,7 @@
         x="816" y="512">
     </rect>
 
-    <text style="font-size: 32px" x="916" y="546">4</text>
+    <text aria-hidden="true" style="font-size: 32px" x="916" y="546">4</text>
 
 </g>
 
@@ -8252,7 +8252,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(4, 4); } ">
     <rect data-route='4'
-        aria-label="4"
+        aria-label="Route 4"
         aria-details="Navigate to Route 4"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(4, 4) }"
@@ -8271,7 +8271,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(25, 4); } ">
     <rect data-route='25'
-        aria-label="25"
+        aria-label="Route 25"
         aria-details="Navigate to Route 25"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(25, 4) }"
@@ -8280,7 +8280,7 @@
         x="752" y="608">
     </rect>
 
-    <text style="font-size: 32px" x="752" y="642">D.R.</text>
+    <text aria-hidden="true" style="font-size: 32px" x="752" y="642">D.R.</text>
 
 </g>
 
@@ -8292,7 +8292,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(5, 4); } ">
     <rect data-route='5'
-        aria-label="5"
+        aria-label="Route 5"
         aria-details="Navigate to Route 5"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(5, 4) }"
@@ -8301,7 +8301,7 @@
         x="544" y="512">
     </rect>
 
-    <text style="font-size: 32px" x="640" y="546">5</text>
+    <text aria-hidden="true" style="font-size: 32px" x="640" y="546">5</text>
 
 </g>
 
@@ -8313,7 +8313,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(6, 4); } ">
     <rect data-route='6'
-        aria-label="6"
+        aria-label="Route 6"
         aria-details="Navigate to Route 6"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(6, 4) }"
@@ -8322,7 +8322,7 @@
         x="288" y="464">
     </rect>
 
-    <text style="font-size: 32px" x="336" y="498">6</text>
+    <text aria-hidden="true" style="font-size: 32px" x="336" y="498">6</text>
 
 </g>
 
@@ -8333,7 +8333,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(6, 4); } ">
     <rect data-route='6'
-        aria-label="6"
+        aria-label="Route 6"
         aria-details="Navigate to Route 6"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(6, 4) }"
@@ -8352,7 +8352,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(7, 4); } ">
     <rect data-route='7'
-        aria-label="7"
+        aria-label="Route 7"
         aria-details="Navigate to Route 7"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(7, 4) }"
@@ -8361,7 +8361,7 @@
         x="288" y="256">
     </rect>
 
-    <text style="font-size: 32px" x="328" y="290">7</text>
+    <text aria-hidden="true" style="font-size: 32px" x="328" y="290">7</text>
 
 </g>
 
@@ -8372,7 +8372,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(7, 4); } ">
     <rect data-route='7'
-        aria-label="7"
+        aria-label="Route 7"
         aria-details="Navigate to Route 7"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(7, 4) }"
@@ -8391,7 +8391,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(8, 4); } ">
     <rect data-route='8'
-        aria-label="8"
+        aria-label="Route 8"
         aria-details="Navigate to Route 8"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(8, 4) }"
@@ -8400,7 +8400,7 @@
         x="544" y="208">
     </rect>
 
-    <text style="font-size: 32px" x="592" y="242">8</text>
+    <text aria-hidden="true" style="font-size: 32px" x="592" y="242">8</text>
 
 </g>
 
@@ -8412,7 +8412,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(9, 4); } ">
     <rect data-route='9'
-        aria-label="9"
+        aria-label="Route 9"
         aria-details="Navigate to Route 9"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(9, 4) }"
@@ -8421,7 +8421,7 @@
         x="656" y="208">
     </rect>
 
-    <text style="font-size: 32px" x="696" y="242">9</text>
+    <text aria-hidden="true" style="font-size: 32px" x="696" y="242">9</text>
 
 </g>
 
@@ -8433,7 +8433,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(11, 4); } ">
     <rect data-route='11'
-        aria-label="11"
+        aria-label="Route 11"
         aria-details="Navigate to Route 11"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(11, 4) }"
@@ -8442,7 +8442,7 @@
         x="896" y="208">
     </rect>
 
-    <text style="font-size: 32px" x="936" y="242">11</text>
+    <text aria-hidden="true" style="font-size: 32px" x="936" y="242">11</text>
 
 </g>
 
@@ -8454,7 +8454,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(12, 4); } ">
     <rect data-route='12'
-        aria-label="12"
+        aria-label="Route 12"
         aria-details="Navigate to Route 12"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(12, 4) }"
@@ -8463,7 +8463,7 @@
         x="1008" y="208">
     </rect>
 
-    <text style="font-size: 32px" x="1048" y="242">12</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1048" y="242">12</text>
 
 </g>
 
@@ -8475,7 +8475,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(13, 4); } ">
     <rect data-route='13'
-        aria-label="13"
+        aria-label="Route 13"
         aria-details="Navigate to Route 13"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(13, 4) }"
@@ -8484,7 +8484,7 @@
         x="1184" y="208">
     </rect>
 
-    <text style="font-size: 32px" x="1224" y="242">13</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1224" y="242">13</text>
 
 </g>
 
@@ -8495,7 +8495,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(13, 4); } ">
     <rect data-route='13'
-        aria-label="13"
+        aria-label="Route 13"
         aria-details="Navigate to Route 13"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(13, 4) }"
@@ -8513,7 +8513,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(13, 4); } ">
     <rect data-route='13'
-        aria-label="13"
+        aria-label="Route 13"
         aria-details="Navigate to Route 13"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(13, 4) }"
@@ -8531,7 +8531,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(13, 4); } ">
     <rect data-route='13'
-        aria-label="13"
+        aria-label="Route 13"
         aria-details="Navigate to Route 13"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(13, 4) }"
@@ -8549,7 +8549,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(13, 4); } ">
     <rect data-route='13'
-        aria-label="13"
+        aria-label="Route 13"
         aria-details="Navigate to Route 13"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(13, 4) }"
@@ -8568,7 +8568,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(14, 4); } ">
     <rect data-route='14'
-        aria-label="14"
+        aria-label="Route 14"
         aria-details="Navigate to Route 14"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(14, 4) }"
@@ -8577,7 +8577,7 @@
         x="1184" y="400">
     </rect>
 
-    <text style="font-size: 32px" x="1272" y="434">14</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1272" y="434">14</text>
 
 </g>
 
@@ -8588,7 +8588,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(14, 4); } ">
     <rect data-route='14'
-        aria-label="14"
+        aria-label="Route 14"
         aria-details="Navigate to Route 14"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(14, 4) }"
@@ -8606,7 +8606,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(14, 4); } ">
     <rect data-route='14'
-        aria-label="14"
+        aria-label="Route 14"
         aria-details="Navigate to Route 14"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(14, 4) }"
@@ -8625,7 +8625,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(15, 4); } ">
     <rect data-route='15'
-        aria-label="15"
+        aria-label="Route 15"
         aria-details="Navigate to Route 15"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(15, 4) }"
@@ -8634,7 +8634,7 @@
         x="992" y="512">
     </rect>
 
-    <text style="font-size: 32px" x="1024" y="546">15</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1024" y="546">15</text>
 
 </g>
 
@@ -8646,7 +8646,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(16, 4); } ">
     <rect data-route='16'
-        aria-label="16"
+        aria-label="Route 16"
         aria-details="Navigate to Route 16"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(16, 4) }"
@@ -8655,7 +8655,7 @@
         x="896" y="512">
     </rect>
 
-    <text style="font-size: 32px" x="928" y="546">16</text>
+    <text aria-hidden="true" style="font-size: 32px" x="928" y="546">16</text>
 
 </g>
 
@@ -8667,7 +8667,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(17, 4); } ">
     <rect data-route='17'
-        aria-label="17"
+        aria-label="Route 17"
         aria-details="Navigate to Route 17"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(17, 4) }"
@@ -8676,7 +8676,7 @@
         x="1120" y="880">
     </rect>
 
-    <text style="font-size: 32px" x="1224" y="914">17</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1224" y="914">17</text>
 
 </g>
 
@@ -8687,7 +8687,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(17, 4); } ">
     <rect data-route='17'
-        aria-label="17"
+        aria-label="Route 17"
         aria-details="Navigate to Route 17"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(17, 4) }"
@@ -8705,7 +8705,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(17, 4); } ">
     <rect data-route='17'
-        aria-label="17"
+        aria-label="Route 17"
         aria-details="Navigate to Route 17"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(17, 4) }"
@@ -8724,7 +8724,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(18, 4); } ">
     <rect data-route='18'
-        aria-label="18"
+        aria-label="Route 18"
         aria-details="Navigate to Route 18"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(18, 4) }"
@@ -8733,7 +8733,7 @@
         x="1120" y="832">
     </rect>
 
-    <text style="font-size: 32px" x="1168" y="866">18</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1168" y="866">18</text>
 
 </g>
 
@@ -8747,7 +8747,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(19, 4); } ">
     <rect data-route='19'
-        aria-label="19"
+        aria-label="Route 19"
         aria-details="Navigate to Route 19"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(19, 4) }"
@@ -8756,7 +8756,7 @@
         x="112" y="640">
     </rect>
 
-    <text style="font-size: 32px" x="164" y="674">19</text>
+    <text aria-hidden="true" style="font-size: 32px" x="164" y="674">19</text>
 
 </g>
 
@@ -8767,7 +8767,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(19, 4); } ">
     <rect data-route='19'
-        aria-label="19"
+        aria-label="Route 19"
         aria-details="Navigate to Route 19"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(19, 4) }"
@@ -8786,7 +8786,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(20, 4); } ">
     <rect data-route='20'
-        aria-label="20"
+        aria-label="Route 20"
         aria-details="Navigate to Route 20"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(20, 4) }"
@@ -8795,7 +8795,7 @@
         x="240" y="688">
     </rect>
 
-    <text style="font-size: 32px" x="328" y="722">20</text>
+    <text aria-hidden="true" style="font-size: 32px" x="328" y="722">20</text>
 
 </g>
 
@@ -8809,7 +8809,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(21, 4); } ">
     <rect data-route='21'
-        aria-label="21"
+        aria-label="Route 21"
         aria-details="Navigate to Route 21"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(21, 4) }"
@@ -8818,7 +8818,7 @@
         x="1456" y="112">
     </rect>
 
-    <text style="font-size: 32px" x="1488" y="146">21</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1488" y="146">21</text>
 
 </g>
 
@@ -8830,7 +8830,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(24, 4); } ">
     <rect data-route='24'
-        aria-label="24"
+        aria-label="Route 24"
         aria-details="Navigate to Route 24"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(24, 4) }"
@@ -8839,7 +8839,7 @@
         x="1408" y="336">
     </rect>
 
-    <text style="font-size: 32px" x="1424" y="370">U.B.</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1424" y="370">U.B.</text>
 
 </g>
 
@@ -8853,7 +8853,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(24, 4); } ">
     <rect data-route='24'
-        aria-label="24"
+        aria-label="Route 24"
         aria-details="Navigate to Route 24"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(24, 4) }"
@@ -8872,7 +8872,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(22, 4); } ">
     <rect data-route='22'
-        aria-label="22"
+        aria-label="Route 22"
         aria-details="Navigate to Route 22"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(22, 4) }"
@@ -8881,7 +8881,7 @@
         x="1328" y="112">
     </rect>
 
-    <text style="font-size: 32px" x="1368" y="146">22</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1368" y="146">22</text>
 
 </g>
 
@@ -8893,7 +8893,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(23, 4); } ">
     <rect data-route='23'
-        aria-label="23"
+        aria-label="Route 23"
         aria-details="Navigate to Route 23"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(23, 4) }"
@@ -8902,7 +8902,7 @@
         x="1184" y="80">
     </rect>
 
-    <text style="font-size: 32px" x="1192" y="106">23</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1192" y="106">23</text>
 
 </g>
 
@@ -8913,7 +8913,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(23, 4); } ">
     <rect data-route='23'
-        aria-label="23"
+        aria-label="Route 23"
         aria-details="Navigate to Route 23"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(23, 4) }"
@@ -8931,7 +8931,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(23, 4); } ">
     <rect data-route='23'
-        aria-label="23"
+        aria-label="Route 23"
         aria-details="Navigate to Route 23"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(23, 4) }"
@@ -8949,7 +8949,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(23, 4); } ">
     <rect data-route='23'
-        aria-label="23"
+        aria-label="Route 23"
         aria-details="Navigate to Route 23"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(23, 4) }"
@@ -9996,7 +9996,7 @@
 </rect>
 </g>
 
-                            <g data-bind='visible: player.region == GameConstants.Region.kalos'>
+                            <g data-bind="visible: player.region == GameConstants.Region.kalos, attr: { 'aria-hidden': player.region != GameConstants.Region.kalos }">
     <image width="1600" height="960" xlink:href="assets/images/kalos.png" href="assets/images/kalos.png"></image>
 
     <!-- ------ -->
@@ -10012,7 +10012,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(1, 5); } ">
     <rect data-route='1'
-        aria-label="1"
+        aria-label="Route 1"
         aria-details="Navigate to Route 1"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(1, 5) }"
@@ -10021,7 +10021,7 @@
         x="848" y="704">
     </rect>
 
-    <text style="font-size: 32px" x="876" y="738">1</text>
+    <text aria-hidden="true" style="font-size: 32px" x="876" y="738">1</text>
 
 </g>
 
@@ -10035,7 +10035,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(2, 5); } ">
     <rect data-route='2'
-        aria-label="2"
+        aria-label="Route 2"
         aria-details="Navigate to Route 2"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(2, 5) }"
@@ -10044,7 +10044,7 @@
         x="848" y="608">
     </rect>
 
-    <text style="font-size: 32px" x="856" y="642">2</text>
+    <text aria-hidden="true" style="font-size: 32px" x="856" y="642">2</text>
 
 </g>
 
@@ -10058,7 +10058,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(3, 5); } ">
     <rect data-route='3'
-        aria-label="3"
+        aria-label="Route 3"
         aria-details="Navigate to Route 3"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(3, 5) }"
@@ -10067,7 +10067,7 @@
         x="800" y="528">
     </rect>
 
-    <text style="font-size: 32px" x="832" y="562">3</text>
+    <text aria-hidden="true" style="font-size: 32px" x="832" y="562">3</text>
 
 </g>
 
@@ -10081,7 +10081,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(4, 5); } ">
     <rect data-route='4'
-        aria-label="4"
+        aria-label="Route 4"
         aria-details="Navigate to Route 4"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(4, 5) }"
@@ -10090,7 +10090,7 @@
         x="800" y="368">
     </rect>
 
-    <text style="font-size: 32px" x="840" y="402">4</text>
+    <text aria-hidden="true" style="font-size: 32px" x="840" y="402">4</text>
 
 </g>
 
@@ -10104,7 +10104,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(5, 5); } ">
     <rect data-route='5'
-        aria-label="5"
+        aria-label="Route 5"
         aria-details="Navigate to Route 5"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(5, 5) }"
@@ -10122,7 +10122,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(5, 5); } ">
     <rect data-route='5'
-        aria-label="5"
+        aria-label="Route 5"
         aria-details="Navigate to Route 5"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(5, 5) }"
@@ -10140,7 +10140,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(5, 5); } ">
     <rect data-route='5'
-        aria-label="5"
+        aria-label="Route 5"
         aria-details="Navigate to Route 5"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(5, 5) }"
@@ -10149,7 +10149,7 @@
         x="656" y="432">
     </rect>
 
-    <text style="font-size: 32px" x="696" y="466">5</text>
+    <text aria-hidden="true" style="font-size: 32px" x="696" y="466">5</text>
 
 </g>
 
@@ -10162,7 +10162,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(5, 5); } ">
     <rect data-route='5'
-        aria-label="5"
+        aria-label="Route 5"
         aria-details="Navigate to Route 5"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(5, 5) }"
@@ -10180,7 +10180,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(5, 5); } ">
     <rect data-route='5'
-        aria-label="5"
+        aria-label="Route 5"
         aria-details="Navigate to Route 5"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(5, 5) }"
@@ -10199,7 +10199,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(6, 5); } ">
     <rect data-route='6'
-        aria-label="6"
+        aria-label="Route 6"
         aria-details="Navigate to Route 6"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(6, 5) }"
@@ -10208,7 +10208,7 @@
         x="560" y="432">
     </rect>
 
-    <text style="font-size: 32px" x="576" y="474">6</text>
+    <text aria-hidden="true" style="font-size: 32px" x="576" y="474">6</text>
 
 </g>
 
@@ -10219,7 +10219,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(6, 5); } ">
     <rect data-route='6'
-        aria-label="6"
+        aria-label="Route 6"
         aria-details="Navigate to Route 6"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(6, 5) }"
@@ -10238,7 +10238,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(7, 5); } ">
     <rect data-route='7'
-        aria-label="7"
+        aria-label="Route 7"
         aria-details="Navigate to Route 7"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(7, 5) }"
@@ -10247,7 +10247,7 @@
         x="448" y="512">
     </rect>
 
-    <text style="font-size: 32px" x="496" y="546">7</text>
+    <text aria-hidden="true" style="font-size: 32px" x="496" y="546">7</text>
 
 </g>
 
@@ -10261,7 +10261,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(8, 5); } ">
     <rect data-route='8'
-        aria-label="8"
+        aria-label="Route 8"
         aria-details="Navigate to Route 8"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(8, 5) }"
@@ -10270,7 +10270,7 @@
         x="384" y="512">
     </rect>
 
-    <text style="font-size: 32px" x="424" y="546">8</text>
+    <text aria-hidden="true" style="font-size: 32px" x="424" y="546">8</text>
 
 </g>
 
@@ -10282,7 +10282,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(9, 5); } ">
     <rect data-route='9'
-        aria-label="9"
+        aria-label="Route 9"
         aria-details="Navigate to Route 9"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(9, 5) }"
@@ -10291,7 +10291,7 @@
         x="384" y="720">
     </rect>
 
-    <text style="font-size: 32px" x="432" y="754">9</text>
+    <text aria-hidden="true" style="font-size: 32px" x="432" y="754">9</text>
 
 </g>
 
@@ -10303,7 +10303,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(10, 5); } ">
     <rect data-route='10'
-        aria-label="10"
+        aria-label="Route 10"
         aria-details="Navigate to Route 10"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(10, 5) }"
@@ -10312,7 +10312,7 @@
         x="112" y="464">
     </rect>
 
-    <text style="font-size: 32px" x="200" y="498">10</text>
+    <text aria-hidden="true" style="font-size: 32px" x="200" y="498">10</text>
 
 </g>
 
@@ -10323,7 +10323,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(10, 5); } ">
     <rect data-route='10'
-        aria-label="10"
+        aria-label="Route 10"
         aria-details="Navigate to Route 10"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(10, 5) }"
@@ -10342,7 +10342,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(11, 5); } ">
     <rect data-route='11'
-        aria-label="11"
+        aria-label="Route 11"
         aria-details="Navigate to Route 11"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(11, 5) }"
@@ -10351,7 +10351,7 @@
         x="160" y="416">
     </rect>
 
-    <text style="font-size: 32px" x="192" y="450">11</text>
+    <text aria-hidden="true" style="font-size: 32px" x="192" y="450">11</text>
 
 </g>
 
@@ -10363,7 +10363,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(12, 5); } ">
     <rect data-route='12'
-        aria-label="12"
+        aria-label="Route 12"
         aria-details="Navigate to Route 12"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(12, 5) }"
@@ -10372,7 +10372,7 @@
         x="272" y="320">
     </rect>
 
-    <text style="font-size: 32px" x="400" y="354">12</text>
+    <text aria-hidden="true" style="font-size: 32px" x="400" y="354">12</text>
 
 </g>
 
@@ -10384,7 +10384,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(13, 5); } ">
     <rect data-route='13'
-        aria-label="13"
+        aria-label="Route 13"
         aria-details="Navigate to Route 13"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(13, 5) }"
@@ -10393,7 +10393,7 @@
         x="576" y="272">
     </rect>
 
-    <text style="font-size: 32px" x="640" y="306">13</text>
+    <text aria-hidden="true" style="font-size: 32px" x="640" y="306">13</text>
 
 </g>
 
@@ -10406,7 +10406,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(13, 5); } ">
     <rect data-route='13'
-        aria-label="13"
+        aria-label="Route 13"
         aria-details="Navigate to Route 13"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(13, 5) }"
@@ -10424,7 +10424,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(13, 5); } ">
     <rect data-route='13'
-        aria-label="13"
+        aria-label="Route 13"
         aria-details="Navigate to Route 13"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(13, 5) }"
@@ -10445,7 +10445,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(14, 5); } ">
     <rect data-route='14'
-        aria-label="14"
+        aria-label="Route 14"
         aria-details="Navigate to Route 14"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(14, 5) }"
@@ -10454,7 +10454,7 @@
         x="832" y="64">
     </rect>
 
-    <text style="font-size: 32px" x="932" y="98">14</text>
+    <text aria-hidden="true" style="font-size: 32px" x="932" y="98">14</text>
 
 </g>
 
@@ -10467,7 +10467,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(14, 5); } ">
     <rect data-route='14'
-        aria-label="14"
+        aria-label="Route 14"
         aria-details="Navigate to Route 14"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(14, 5) }"
@@ -10486,7 +10486,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(15, 5); } ">
     <rect data-route='15'
-        aria-label="15"
+        aria-label="Route 15"
         aria-details="Navigate to Route 15"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(15, 5) }"
@@ -10506,7 +10506,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(15, 5); } ">
     <rect data-route='15'
-        aria-label="15"
+        aria-label="Route 15"
         aria-details="Navigate to Route 15"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(15, 5) }"
@@ -10515,7 +10515,7 @@
         x="992" y="48">
     </rect>
 
-    <text style="font-size: 32px" x="1072" y="82">15</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1072" y="82">15</text>
 
 </g>
 
@@ -10526,7 +10526,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(15, 5); } ">
     <rect data-route='15'
-        aria-label="15"
+        aria-label="Route 15"
         aria-details="Navigate to Route 15"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(15, 5) }"
@@ -10544,7 +10544,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(15, 5); } ">
     <rect data-route='15'
-        aria-label="15"
+        aria-label="Route 15"
         aria-details="Navigate to Route 15"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(15, 5) }"
@@ -10562,7 +10562,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(15, 5); } ">
     <rect data-route='15'
-        aria-label="15"
+        aria-label="Route 15"
         aria-details="Navigate to Route 15"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(15, 5) }"
@@ -10581,7 +10581,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(16, 5); } ">
     <rect data-route='16'
-        aria-label="16"
+        aria-label="Route 16"
         aria-details="Navigate to Route 16"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(16, 5) }"
@@ -10590,7 +10590,7 @@
         x="928" y="288">
     </rect>
 
-    <text style="font-size: 32px" x="1000" y="322">16</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1000" y="322">16</text>
 
 </g>
 
@@ -10603,7 +10603,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(16, 5); } ">
     <rect data-route='16'
-        aria-label="16"
+        aria-label="Route 16"
         aria-details="Navigate to Route 16"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(16, 5) }"
@@ -10621,7 +10621,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(16, 5); } ">
     <rect data-route='16'
-        aria-label="16"
+        aria-label="Route 16"
         aria-details="Navigate to Route 16"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(16, 5) }"
@@ -10642,7 +10642,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(17, 5); } ">
     <rect data-route='17'
-        aria-label="17"
+        aria-label="Route 17"
         aria-details="Navigate to Route 17"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(17, 5) }"
@@ -10660,7 +10660,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(17, 5); } ">
     <rect data-route='17'
-        aria-label="17"
+        aria-label="Route 17"
         aria-details="Navigate to Route 17"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(17, 5) }"
@@ -10669,7 +10669,7 @@
         x="1168" y="368">
     </rect>
 
-    <text style="font-size: 32px" x="1184" y="402">17</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1184" y="402">17</text>
 
 </g>
 
@@ -10681,7 +10681,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(18, 5); } ">
     <rect data-route='18'
-        aria-label="18"
+        aria-label="Route 18"
         aria-details="Navigate to Route 18"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(18, 5) }"
@@ -10690,7 +10690,7 @@
         x="1296" y="368">
     </rect>
 
-    <text style="font-size: 32px" x="1320" y="394">18</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1320" y="394">18</text>
 
 </g>
 
@@ -10701,7 +10701,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(18, 5); } ">
     <rect data-route='18'
-        aria-label="18"
+        aria-label="Route 18"
         aria-details="Navigate to Route 18"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(18, 5) }"
@@ -10720,7 +10720,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(19, 5); } ">
     <rect data-route='19'
-        aria-label="19"
+        aria-label="Route 19"
         aria-details="Navigate to Route 19"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(19, 5) }"
@@ -10738,7 +10738,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(19, 5); } ">
     <rect data-route='19'
-        aria-label="19"
+        aria-label="Route 19"
         aria-details="Navigate to Route 19"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(19, 5) }"
@@ -10747,7 +10747,7 @@
         x="1248" y="464">
     </rect>
 
-    <text style="font-size: 32px" x="1256" y="530">19</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1256" y="530">19</text>
 
 </g>
 
@@ -10758,7 +10758,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(19, 5); } ">
     <rect data-route='19'
-        aria-label="19"
+        aria-label="Route 19"
         aria-details="Navigate to Route 19"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(19, 5) }"
@@ -10779,7 +10779,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(20, 5); } ">
     <rect data-route='20'
-        aria-label="20"
+        aria-label="Route 20"
         aria-details="Navigate to Route 20"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(20, 5) }"
@@ -10788,7 +10788,7 @@
         x="1152" y="528">
     </rect>
 
-    <text style="font-size: 32px" x="1184" y="562">20</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1184" y="562">20</text>
 
 </g>
 
@@ -10799,7 +10799,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(20, 5); } ">
     <rect data-route='20'
-        aria-label="20"
+        aria-label="Route 20"
         aria-details="Navigate to Route 20"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(20, 5) }"
@@ -10818,7 +10818,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(21, 5); } ">
     <rect data-route='21'
-        aria-label="21"
+        aria-label="Route 21"
         aria-details="Navigate to Route 21"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(21, 5) }"
@@ -10827,7 +10827,7 @@
         x="1008" y="528">
     </rect>
 
-    <text style="font-size: 32px" x="1064" y="562">21</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1064" y="562">21</text>
 
 </g>
 
@@ -10839,7 +10839,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(22, 5); } ">
     <rect data-route='22'
-        aria-label="22"
+        aria-label="Route 22"
         aria-details="Navigate to Route 22"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(22, 5) }"
@@ -10848,7 +10848,7 @@
         x="848" y="528">
     </rect>
 
-    <text style="font-size: 32px" x="912" y="562">22</text>
+    <text aria-hidden="true" style="font-size: 32px" x="912" y="562">22</text>
 
 </g>
 
@@ -10860,7 +10860,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(23, 5); } ">
     <rect data-route='23'
-        aria-label="23"
+        aria-label="Route 23"
         aria-details="Navigate to Route 23"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(23, 5) }"
@@ -10878,7 +10878,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(23, 5); } ">
     <rect data-route='23'
-        aria-label="23"
+        aria-label="Route 23"
         aria-details="Navigate to Route 23"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(23, 5) }"
@@ -10887,7 +10887,7 @@
         x="336" y="208">
     </rect>
 
-    <text style="font-size: 32px" x="384" y="242">A.B.</text>
+    <text aria-hidden="true" style="font-size: 32px" x="384" y="242">A.B.</text>
 
 </g>
 <!--Azure Bay extras-->
@@ -10899,7 +10899,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(23, 5); } ">
     <rect data-route='23'
-        aria-label="23"
+        aria-label="Route 23"
         aria-details="Navigate to Route 23"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(23, 5) }"
@@ -11534,7 +11534,7 @@
 
 </g>
 
-                            <g data-bind='visible: player.region == GameConstants.Region.alola'>
+                            <g data-bind="visible: player.region == GameConstants.Region.alola, attr: { 'aria-hidden': player.region != GameConstants.Region.alola }">
     <!-- ko if: player.subregion == SubRegions.getSubRegion(GameConstants.Region.alola, 'Melemele & Akala islands').id -->
     <image width="1600" height="960" xlink:href="assets/images/alola.png" href="assets/images/alola.png"></image>
 
@@ -11549,7 +11549,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(1, 6); } ">
     <rect data-route='1'
-        aria-label="1"
+        aria-label="Route 1"
         aria-details="Navigate to Route 1"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(1, 6) }"
@@ -11558,7 +11558,7 @@
         x="288" y="384">
     </rect>
 
-    <text style="font-size: 32px" x="400" y="418">1</text>
+    <text aria-hidden="true" style="font-size: 32px" x="400" y="418">1</text>
 
 </g>
 
@@ -11570,7 +11570,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(1, 6); } ">
     <rect data-route='1'
-        aria-label="1"
+        aria-label="Route 1"
         aria-details="Navigate to Route 1"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(1, 6) }"
@@ -11582,14 +11582,14 @@
 </g>
 
 
-    <!--Route 1 Hau'oli Outskirts--> 
+    <!--Route 1 Hau'oli Outskirts-->
     
 
 <g
 
     data-bind="click:function(){ MapHelper.moveToRoute(18, 6); } ">
     <rect data-route='18'
-        aria-label="18"
+        aria-label="Route 18"
         aria-details="Navigate to Route 18"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(18, 6) }"
@@ -11598,19 +11598,19 @@
         x="272" y="512">
     </rect>
 
-    <text style="font-size: 32px" x="336" y="546">Outskirts</text>
+    <text aria-hidden="true" style="font-size: 32px" x="336" y="546">Outskirts</text>
 
 </g>
 
 
-    <!--Route 1 Hau'oli Outskirts Extension--> 
+    <!--Route 1 Hau'oli Outskirts Extension-->
     
 
 <g
 
     data-bind="click:function(){ MapHelper.moveToRoute(18, 6); } ">
     <rect data-route='18'
-        aria-label="18"
+        aria-label="Route 18"
         aria-details="Navigate to Route 18"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(18, 6) }"
@@ -11629,7 +11629,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(18, 6); } ">
     <rect data-route='18'
-        aria-label="18"
+        aria-label="Route 18"
         aria-details="Navigate to Route 18"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(18, 6) }"
@@ -11648,7 +11648,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(18, 6); } ">
     <rect data-route='18'
-        aria-label="18"
+        aria-label="Route 18"
         aria-details="Navigate to Route 18"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(18, 6) }"
@@ -11667,7 +11667,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(2, 6); } ">
     <rect data-route='2'
-        aria-label="2"
+        aria-label="Route 2"
         aria-details="Navigate to Route 2"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(2, 6) }"
@@ -11676,7 +11676,7 @@
         x="64" y="144">
     </rect>
 
-    <text style="font-size: 32px" x="80" y="310">2</text>
+    <text aria-hidden="true" style="font-size: 32px" x="80" y="310">2</text>
 
 </g>
 
@@ -11688,7 +11688,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(2, 6); } ">
     <rect data-route='2'
-        aria-label="2"
+        aria-label="Route 2"
         aria-details="Navigate to Route 2"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(2, 6) }"
@@ -11707,7 +11707,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(3, 6); } ">
     <rect data-route='3'
-        aria-label="3"
+        aria-label="Route 3"
         aria-details="Navigate to Route 3"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(3, 6) }"
@@ -11716,7 +11716,7 @@
         x="384" y="144">
     </rect>
 
-    <text style="font-size: 32px" x="400" y="274">3</text>
+    <text aria-hidden="true" style="font-size: 32px" x="400" y="274">3</text>
 
 </g>
 
@@ -11728,7 +11728,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(3, 6); } ">
     <rect data-route='3'
-        aria-label="3"
+        aria-label="Route 3"
         aria-details="Navigate to Route 3"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(3, 6) }"
@@ -11747,7 +11747,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(19, 6); } ">
     <rect data-route='19'
-        aria-label="19"
+        aria-label="Route 19"
         aria-details="Navigate to Route 19"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(19, 6) }"
@@ -11756,7 +11756,7 @@
         x="592" y="528">
     </rect>
 
-    <text style="font-size: 32px" x="608" y="618">Sea</text>
+    <text aria-hidden="true" style="font-size: 32px" x="608" y="618">Sea</text>
 
 </g>
 
@@ -11768,7 +11768,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(19, 6); } ">
     <rect data-route='19'
-        aria-label="19"
+        aria-label="Route 19"
         aria-details="Navigate to Route 19"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(19, 6) }"
@@ -11787,7 +11787,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(19, 6); } ">
     <rect data-route='19'
-        aria-label="19"
+        aria-label="Route 19"
         aria-details="Navigate to Route 19"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(19, 6) }"
@@ -11806,7 +11806,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(19, 6); } ">
     <rect data-route='19'
-        aria-label="19"
+        aria-label="Route 19"
         aria-details="Navigate to Route 19"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(19, 6) }"
@@ -11825,7 +11825,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(20, 6); } ">
     <rect data-route='20'
-        aria-label="20"
+        aria-label="Route 20"
         aria-details="Navigate to Route 20"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(20, 6) }"
@@ -11834,7 +11834,7 @@
         x="496" y="208">
     </rect>
 
-    <text style="font-size: 32px" x="520" y="290">Bay</text>
+    <text aria-hidden="true" style="font-size: 32px" x="520" y="290">Bay</text>
 
 </g>
 
@@ -11846,7 +11846,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(20, 6); } ">
     <rect data-route='20'
-        aria-label="20"
+        aria-label="Route 20"
         aria-details="Navigate to Route 20"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(20, 6) }"
@@ -11865,7 +11865,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(20, 6); } ">
     <rect data-route='20'
-        aria-label="20"
+        aria-label="Route 20"
         aria-details="Navigate to Route 20"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(20, 6) }"
@@ -11884,7 +11884,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(4, 6); } ">
     <rect data-route='4'
-        aria-label="4"
+        aria-label="Route 4"
         aria-details="Navigate to Route 4"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(4, 6) }"
@@ -11893,7 +11893,7 @@
         x="1136" y="480">
     </rect>
 
-    <text style="font-size: 32px" x="1152" y="578">4</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1152" y="578">4</text>
 
 </g>
 
@@ -11905,7 +11905,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(4, 6); } ">
     <rect data-route='4'
-        aria-label="4"
+        aria-label="Route 4"
         aria-details="Navigate to Route 4"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(4, 6) }"
@@ -11924,7 +11924,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(5, 6); } ">
     <rect data-route='5'
-        aria-label="5"
+        aria-label="Route 5"
         aria-details="Navigate to Route 5"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(5, 6) }"
@@ -11933,7 +11933,7 @@
         x="1280" y="208">
     </rect>
 
-    <text style="font-size: 32px" x="1296" y="330">5</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1296" y="330">5</text>
 
 </g>
 
@@ -11945,7 +11945,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(6, 6); } ">
     <rect data-route='6'
-        aria-label="6"
+        aria-label="Route 6"
         aria-details="Navigate to Route 6"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(6, 6) }"
@@ -11954,7 +11954,7 @@
         x="1280" y="480">
     </rect>
 
-    <text style="font-size: 32px" x="1296" y="610">6</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1296" y="610">6</text>
 
 </g>
 
@@ -11966,7 +11966,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(6, 6); } ">
     <rect data-route='6'
-        aria-label="6"
+        aria-label="Route 6"
         aria-details="Navigate to Route 6"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(6, 6) }"
@@ -11985,7 +11985,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(7, 6); } ">
     <rect data-route='7'
-        aria-label="7"
+        aria-label="Route 7"
         aria-details="Navigate to Route 7"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(7, 6) }"
@@ -11994,7 +11994,7 @@
         x="1472" y="144">
     </rect>
 
-    <text style="font-size: 32px" x="1488" y="386">7</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1488" y="386">7</text>
 
 </g>
 
@@ -12006,7 +12006,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(8, 6); } ">
     <rect data-route='8'
-        aria-label="8"
+        aria-label="Route 8"
         aria-details="Navigate to Route 8"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(8, 6) }"
@@ -12015,7 +12015,7 @@
         x="1200" y="96">
     </rect>
 
-    <text style="font-size: 32px" x="1352" y="130">8</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1352" y="130">8</text>
 
 </g>
 
@@ -12027,7 +12027,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(8, 6); } ">
     <rect data-route='8'
-        aria-label="8"
+        aria-label="Route 8"
         aria-details="Navigate to Route 8"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(8, 6) }"
@@ -12046,7 +12046,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(8, 6); } ">
     <rect data-route='8'
-        aria-label="8"
+        aria-label="Route 8"
         aria-details="Navigate to Route 8"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(8, 6) }"
@@ -12065,7 +12065,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(9, 6); } ">
     <rect data-route='9'
-        aria-label="9"
+        aria-label="Route 9"
         aria-details="Navigate to Route 9"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(9, 6) }"
@@ -12074,7 +12074,7 @@
         x="1040" y="832">
     </rect>
 
-    <text style="font-size: 32px" x="1104" y="866">9</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1104" y="866">9</text>
 
 </g>
 
@@ -12086,7 +12086,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(9, 6); } ">
     <rect data-route='9'
-        aria-label="9"
+        aria-label="Route 9"
         aria-details="Navigate to Route 9"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(9, 6) }"
@@ -12105,7 +12105,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(21, 6); } ">
     <rect data-route='21'
-        aria-label="21"
+        aria-label="Route 21"
         aria-details="Navigate to Route 21"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(21, 6) }"
@@ -12114,7 +12114,7 @@
         x="1248" y="832">
     </rect>
 
-    <text style="font-size: 32px" x="1264" y="866">A.O.</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1264" y="866">A.O.</text>
 
 </g>
 
@@ -12126,7 +12126,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(21, 6); } ">
     <rect data-route='21'
-        aria-label="21"
+        aria-label="Route 21"
         aria-details="Navigate to Route 21"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(21, 6) }"
@@ -12634,7 +12634,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(10, 6); } ">
     <rect data-route='10'
-        aria-label="10"
+        aria-label="Route 10"
         aria-details="Navigate to Route 10"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(10, 6) }"
@@ -12643,7 +12643,7 @@
         x="1024" y="304">
     </rect>
 
-    <text style="font-size: 32px" x="1080" y="338">10</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1080" y="338">10</text>
 
 </g>
 
@@ -12655,7 +12655,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(22, 6); } ">
     <rect data-route='22'
-        aria-label="22"
+        aria-label="Route 22"
         aria-details="Navigate to Route 22"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(22, 6) }"
@@ -12664,7 +12664,7 @@
         x="1024" y="208">
     </rect>
 
-    <text style="font-size: 32px" x="1032" y="266">MH</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1032" y="266">MH</text>
 
 </g>
 
@@ -12676,7 +12676,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(11, 6); } ">
     <rect data-route='11'
-        aria-label="11"
+        aria-label="Route 11"
         aria-details="Navigate to Route 11"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(11, 6) }"
@@ -12685,7 +12685,7 @@
         x="1168" y="352">
     </rect>
 
-    <text style="font-size: 32px" x="1176" y="418">11</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1176" y="418">11</text>
 
 </g>
 
@@ -12697,7 +12697,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(11, 6); } ">
     <rect data-route='11'
-        aria-label="11"
+        aria-label="Route 11"
         aria-details="Navigate to Route 11"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(11, 6) }"
@@ -12716,7 +12716,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(12, 6); } ">
     <rect data-route='12'
-        aria-label="12"
+        aria-label="Route 12"
         aria-details="Navigate to Route 12"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(12, 6) }"
@@ -12725,7 +12725,7 @@
         x="1344" y="496">
     </rect>
 
-    <text style="font-size: 32px" x="1352" y="602">12</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1352" y="602">12</text>
 
 </g>
 
@@ -12737,7 +12737,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(12, 6); } ">
     <rect data-route='12'
-        aria-label="12"
+        aria-label="Route 12"
         aria-details="Navigate to Route 12"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(12, 6) }"
@@ -12756,7 +12756,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(12, 6); } ">
     <rect data-route='12'
-        aria-label="12"
+        aria-label="Route 12"
         aria-details="Navigate to Route 12"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(12, 6) }"
@@ -12775,7 +12775,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(12, 6); } ">
     <rect data-route='12'
-        aria-label="12"
+        aria-label="Route 12"
         aria-details="Navigate to Route 12"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(12, 6) }"
@@ -12794,7 +12794,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(12, 6); } ">
     <rect data-route='12'
-        aria-label="12"
+        aria-label="Route 12"
         aria-details="Navigate to Route 12"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(12, 6) }"
@@ -12813,7 +12813,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(12, 6); } ">
     <rect data-route='12'
-        aria-label="12"
+        aria-label="Route 12"
         aria-details="Navigate to Route 12"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(12, 6) }"
@@ -12832,7 +12832,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(12, 6); } ">
     <rect data-route='12'
-        aria-label="12"
+        aria-label="Route 12"
         aria-details="Navigate to Route 12"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(12, 6) }"
@@ -12851,7 +12851,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(12, 6); } ">
     <rect data-route='12'
-        aria-label="12"
+        aria-label="Route 12"
         aria-details="Navigate to Route 12"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(12, 6) }"
@@ -12870,7 +12870,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(12, 6); } ">
     <rect data-route='12'
-        aria-label="12"
+        aria-label="Route 12"
         aria-details="Navigate to Route 12"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(12, 6) }"
@@ -12889,7 +12889,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(12, 6); } ">
     <rect data-route='12'
-        aria-label="12"
+        aria-label="Route 12"
         aria-details="Navigate to Route 12"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(12, 6) }"
@@ -12908,7 +12908,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(12, 6); } ">
     <rect data-route='12'
-        aria-label="12"
+        aria-label="Route 12"
         aria-details="Navigate to Route 12"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(12, 6) }"
@@ -12927,7 +12927,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(13, 6); } ">
     <rect data-route='13'
-        aria-label="13"
+        aria-label="Route 13"
         aria-details="Navigate to Route 13"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(13, 6) }"
@@ -12936,7 +12936,7 @@
         x="1088" y="704">
     </rect>
 
-    <text style="font-size: 32px" x="1184" y="738">13</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1184" y="738">13</text>
 
 </g>
 
@@ -12948,7 +12948,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(23, 6); } ">
     <rect data-route='23'
-        aria-label="23"
+        aria-label="Route 23"
         aria-details="Navigate to Route 23"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(23, 6) }"
@@ -12957,7 +12957,7 @@
         x="1168" y="544">
     </rect>
 
-    <text style="font-size: 32px" x="1176" y="634">HD</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1176" y="634">HD</text>
 
 </g>
 
@@ -12969,7 +12969,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(14, 6); } ">
     <rect data-route='14'
-        aria-label="14"
+        aria-label="Route 14"
         aria-details="Navigate to Route 14"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(14, 6) }"
@@ -12978,7 +12978,7 @@
         x="992" y="752">
     </rect>
 
-    <text style="font-size: 32px" x="1000" y="818">14</text>
+    <text aria-hidden="true" style="font-size: 32px" x="1000" y="818">14</text>
 
 </g>
 
@@ -12990,7 +12990,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(14, 6); } ">
     <rect data-route='14'
-        aria-label="14"
+        aria-label="Route 14"
         aria-details="Navigate to Route 14"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(14, 6) }"
@@ -13009,7 +13009,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(15, 6); } ">
     <rect data-route='15'
-        aria-label="15"
+        aria-label="Route 15"
         aria-details="Navigate to Route 15"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(15, 6) }"
@@ -13018,7 +13018,7 @@
         x="848" y="560">
     </rect>
 
-    <text style="font-size: 32px" x="864" y="666">15</text>
+    <text aria-hidden="true" style="font-size: 32px" x="864" y="666">15</text>
 
 </g>
 
@@ -13030,7 +13030,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(15, 6); } ">
     <rect data-route='15'
-        aria-label="15"
+        aria-label="Route 15"
         aria-details="Navigate to Route 15"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(15, 6) }"
@@ -13049,7 +13049,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(15, 6); } ">
     <rect data-route='15'
-        aria-label="15"
+        aria-label="Route 15"
         aria-details="Navigate to Route 15"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(15, 6) }"
@@ -13068,7 +13068,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(16, 6); } ">
     <rect data-route='16'
-        aria-label="16"
+        aria-label="Route 16"
         aria-details="Navigate to Route 16"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(16, 6) }"
@@ -13077,7 +13077,7 @@
         x="864" y="464">
     </rect>
 
-    <text style="font-size: 32px" x="872" y="522">16</text>
+    <text aria-hidden="true" style="font-size: 32px" x="872" y="522">16</text>
 
 </g>
 
@@ -13089,7 +13089,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(17, 6); } ">
     <rect data-route='17'
-        aria-label="17"
+        aria-label="Route 17"
         aria-details="Navigate to Route 17"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(17, 6) }"
@@ -13098,7 +13098,7 @@
         x="864" y="192">
     </rect>
 
-    <text style="font-size: 32px" x="872" y="314">17</text>
+    <text aria-hidden="true" style="font-size: 32px" x="872" y="314">17</text>
 
 </g>
 
@@ -13110,7 +13110,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(17, 6); } ">
     <rect data-route='17'
-        aria-label="17"
+        aria-label="Route 17"
         aria-details="Navigate to Route 17"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(17, 6) }"
@@ -13129,7 +13129,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(24, 6); } ">
     <rect data-route='24'
-        aria-label="24"
+        aria-label="Route 24"
         aria-details="Navigate to Route 24"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(24, 6) }"
@@ -13138,7 +13138,7 @@
         x="256" y="608">
     </rect>
 
-    <text style="font-size: 32px" x="336" y="642">PW</text>
+    <text aria-hidden="true" style="font-size: 32px" x="336" y="642">PW</text>
 
 </g>
 
@@ -13150,7 +13150,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(24, 6); } ">
     <rect data-route='24'
-        aria-label="24"
+        aria-label="Route 24"
         aria-details="Navigate to Route 24"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(24, 6) }"
@@ -13169,7 +13169,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(24, 6); } ">
     <rect data-route='24'
-        aria-label="24"
+        aria-label="Route 24"
         aria-details="Navigate to Route 24"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(24, 6) }"
@@ -13188,7 +13188,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(25, 6); } ">
     <rect data-route='25'
-        aria-label="25"
+        aria-label="Route 25"
         aria-details="Navigate to Route 25"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(25, 6) }"
@@ -13197,7 +13197,7 @@
         x="464" y="656">
     </rect>
 
-    <text style="font-size: 32px" x="496" y="690">APP</text>
+    <text aria-hidden="true" style="font-size: 32px" x="496" y="690">APP</text>
 
 </g>
 
@@ -13209,7 +13209,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(25, 6); } ">
     <rect data-route='25'
-        aria-label="25"
+        aria-label="Route 25"
         aria-details="Navigate to Route 25"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(25, 6) }"
@@ -13228,7 +13228,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(26, 6); } ">
     <rect data-route='26'
-        aria-label="26"
+        aria-label="Route 26"
         aria-details="Navigate to Route 26"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(26, 6) }"
@@ -13237,7 +13237,7 @@
         x="496" y="704">
     </rect>
 
-    <text style="font-size: 32px" x="536" y="738">PBC</text>
+    <text aria-hidden="true" style="font-size: 32px" x="536" y="738">PBC</text>
 
 </g>
 
@@ -13249,7 +13249,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(27, 6); } ">
     <rect data-route='27'
-        aria-label="27"
+        aria-label="Route 27"
         aria-details="Navigate to Route 27"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(27, 6) }"
@@ -13258,7 +13258,7 @@
         x="528" y="576">
     </rect>
 
-    <text style="font-size: 32px" x="528" y="626">PGr</text>
+    <text aria-hidden="true" style="font-size: 32px" x="528" y="626">PGr</text>
 
 </g>
 
@@ -13270,7 +13270,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(28, 6); } ">
     <rect data-route='28'
-        aria-label="28"
+        aria-label="Route 28"
         aria-details="Navigate to Route 28"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(28, 6) }"
@@ -13279,7 +13279,7 @@
         x="576" y="576">
     </rect>
 
-    <text style="font-size: 32px" x="616" y="610">PP</text>
+    <text aria-hidden="true" style="font-size: 32px" x="616" y="610">PP</text>
 
 </g>
 
@@ -13291,7 +13291,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(29, 6); } ">
     <rect data-route='29'
-        aria-label="29"
+        aria-label="Route 29"
         aria-details="Navigate to Route 29"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(29, 6) }"
@@ -13300,7 +13300,7 @@
         x="640" y="448">
     </rect>
 
-    <text style="font-size: 32px" x="648" y="522">PC</text>
+    <text aria-hidden="true" style="font-size: 32px" x="648" y="522">PC</text>
 
 </g>
 
@@ -13312,7 +13312,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(30, 6); } ">
     <rect data-route='30'
-        aria-label="30"
+        aria-label="Route 30"
         aria-details="Navigate to Route 30"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(30, 6) }"
@@ -13321,7 +13321,7 @@
         x="512" y="368">
     </rect>
 
-    <text style="font-size: 32px" x="544" y="402">PGa</text>
+    <text aria-hidden="true" style="font-size: 32px" x="544" y="402">PGa</text>
 
 </g>
 
@@ -13333,7 +13333,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(30, 6); } ">
     <rect data-route='30'
-        aria-label="30"
+        aria-label="Route 30"
         aria-details="Navigate to Route 30"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(30, 6) }"
@@ -13352,7 +13352,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(30, 6); } ">
     <rect data-route='30'
-        aria-label="30"
+        aria-label="Route 30"
         aria-details="Navigate to Route 30"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(30, 6) }"
@@ -13371,7 +13371,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(30, 6); } ">
     <rect data-route='30'
-        aria-label="30"
+        aria-label="Route 30"
         aria-details="Navigate to Route 30"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(30, 6) }"
@@ -13390,7 +13390,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(30, 6); } ">
     <rect data-route='30'
-        aria-label="30"
+        aria-label="Route 30"
         aria-details="Navigate to Route 30"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(30, 6) }"
@@ -13409,7 +13409,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(30, 6); } ">
     <rect data-route='30'
-        aria-label="30"
+        aria-label="Route 30"
         aria-details="Navigate to Route 30"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(30, 6) }"
@@ -13788,7 +13788,7 @@
     <!-- /ko -->
 </g>
 
-                            <g data-bind='visible: player.region == GameConstants.Region.galar'>
+                            <g data-bind="visible: player.region == GameConstants.Region.galar, attr: { 'aria-hidden': player.region != GameConstants.Region.galar }">
     <image width="1600" height="960" xlink:href="assets/images/galar.png" href="assets/images/galar.png"></image>
 
     <!-- ------ -->
@@ -13804,7 +13804,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(1, 7); } ">
     <rect data-route='1'
-        aria-label="1"
+        aria-label="Route 1"
         aria-details="Navigate to Route 1"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(1, 7) }"
@@ -13813,7 +13813,7 @@
         x="720" y="832">
     </rect>
 
-    <text style="font-size: 32px" x="744" y="861">1</text>
+    <text aria-hidden="true" style="font-size: 32px" x="744" y="861">1</text>
 
 </g>
 
@@ -13825,7 +13825,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(2, 7); } ">
     <rect data-route='2'
-        aria-label="2"
+        aria-label="Route 2"
         aria-details="Navigate to Route 2"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(2, 7) }"
@@ -13834,7 +13834,7 @@
         x="768" y="832">
     </rect>
 
-    <text style="font-size: 32px" x="784" y="858">2</text>
+    <text aria-hidden="true" style="font-size: 32px" x="784" y="858">2</text>
 
 </g>
 
@@ -13847,7 +13847,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(2, 7); } ">
     <rect data-route='2'
-        aria-label="2"
+        aria-label="Route 2"
         aria-details="Navigate to Route 2"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(2, 7) }"
@@ -13868,7 +13868,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(3, 7); } ">
     <rect data-route='3'
-        aria-label="3"
+        aria-label="Route 3"
         aria-details="Navigate to Route 3"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(3, 7) }"
@@ -13877,7 +13877,7 @@
         x="720" y="688">
     </rect>
 
-    <text style="font-size: 32px" x="733" y="717">R.F.</text>
+    <text aria-hidden="true" style="font-size: 32px" x="733" y="717">R.F.</text>
 
 </g>
 
@@ -13889,7 +13889,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(4, 7); } ">
     <rect data-route='4'
-        aria-label="4"
+        aria-label="Route 4"
         aria-details="Navigate to Route 4"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(4, 7) }"
@@ -13898,7 +13898,7 @@
         x="624" y="752">
     </rect>
 
-    <text style="font-size: 32px" x="640" y="778">D.G.</text>
+    <text aria-hidden="true" style="font-size: 32px" x="640" y="778">D.G.</text>
 
 </g>
 
@@ -13911,7 +13911,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(4, 7); } ">
     <rect data-route='4'
-        aria-label="4"
+        aria-label="Route 4"
         aria-details="Navigate to Route 4"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(4, 7) }"
@@ -13932,7 +13932,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(5, 7); } ">
     <rect data-route='5'
-        aria-label="5"
+        aria-label="Route 5"
         aria-details="Navigate to Route 5"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(5, 7) }"
@@ -13941,7 +13941,7 @@
         x="688" y="640">
     </rect>
 
-    <text style="font-size: 32px" x="670" y="669">W.L.A.</text>
+    <text aria-hidden="true" style="font-size: 32px" x="670" y="669">W.L.A.</text>
 
 </g>
 
@@ -13952,7 +13952,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(5, 7); } ">
     <rect data-route='5'
-        aria-label="5"
+        aria-label="Route 5"
         aria-details="Navigate to Route 5"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(5, 7) }"
@@ -13971,7 +13971,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(6, 7); } ">
     <rect data-route='6'
-        aria-label="6"
+        aria-label="Route 6"
         aria-details="Navigate to Route 6"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(6, 7) }"
@@ -13980,7 +13980,7 @@
         x="736" y="640">
     </rect>
 
-    <text style="font-size: 32px" x="760" y="666">E.L.A</text>
+    <text aria-hidden="true" style="font-size: 32px" x="760" y="666">E.L.A</text>
 
 </g>
 
@@ -13993,7 +13993,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(6, 7); } ">
     <rect data-route='6'
-        aria-label="6"
+        aria-label="Route 6"
         aria-details="Navigate to Route 6"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(6, 7) }"
@@ -14014,7 +14014,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(9, 7); } ">
     <rect data-route='9'
-        aria-label="9"
+        aria-label="Route 9"
         aria-details="Navigate to Route 9"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(9, 7) }"
@@ -14023,7 +14023,7 @@
         x="864" y="608">
     </rect>
 
-    <text style="font-size: 32px" x="875" y="637">N.L.M.</text>
+    <text aria-hidden="true" style="font-size: 32px" x="875" y="637">N.L.M.</text>
 
 </g>
 
@@ -14035,7 +14035,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(8, 7); } ">
     <rect data-route='8'
-        aria-label="8"
+        aria-label="Route 8"
         aria-details="Navigate to Route 8"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(8, 7) }"
@@ -14044,7 +14044,7 @@
         x="752" y="720">
     </rect>
 
-    <text style="font-size: 32px" x="760" y="746">S.L.M.</text>
+    <text aria-hidden="true" style="font-size: 32px" x="760" y="746">S.L.M.</text>
 
 </g>
 
@@ -14057,7 +14057,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(8, 7); } ">
     <rect data-route='8'
-        aria-label="8"
+        aria-label="Route 8"
         aria-details="Navigate to Route 8"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(8, 7) }"
@@ -14076,7 +14076,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(7, 7); } ">
     <rect data-route='7'
-        aria-label="7"
+        aria-label="Route 7"
         aria-details="Navigate to Route 7"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(7, 7) }"
@@ -14085,7 +14085,7 @@
         x="752" y="752">
     </rect>
 
-    <text style="font-size: 32px" x="800" y="778">G.S</text>
+    <text aria-hidden="true" style="font-size: 32px" x="800" y="778">G.S</text>
 
 </g>
 
@@ -14097,7 +14097,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(10, 7); } ">
     <rect data-route='10'
-        aria-label="10"
+        aria-label="Route 10"
         aria-details="Navigate to Route 10"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(10, 7) }"
@@ -14106,7 +14106,7 @@
         x="624" y="576">
     </rect>
 
-    <text style="font-size: 32px" x="664" y="602">3</text>
+    <text aria-hidden="true" style="font-size: 32px" x="664" y="602">3</text>
 
 </g>
 
@@ -14120,7 +14120,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(11, 7); } ">
     <rect data-route='11'
-        aria-label="11"
+        aria-label="Route 11"
         aria-details="Navigate to Route 11"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(11, 7) }"
@@ -14129,7 +14129,7 @@
         x="560" y="480">
     </rect>
 
-    <text style="font-size: 32px" x="576" y="509">4</text>
+    <text aria-hidden="true" style="font-size: 32px" x="576" y="509">4</text>
 
 </g>
 
@@ -14141,7 +14141,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(12, 7); } ">
     <rect data-route='12'
-        aria-label="12"
+        aria-label="Route 12"
         aria-details="Navigate to Route 12"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(12, 7) }"
@@ -14150,7 +14150,7 @@
         x="608" y="480">
     </rect>
 
-    <text style="font-size: 32px" x="760" y="506">5</text>
+    <text aria-hidden="true" style="font-size: 32px" x="760" y="506">5</text>
 
 </g>
 
@@ -14161,7 +14161,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(12, 7); } ">
     <rect data-route='12'
-        aria-label="12"
+        aria-label="Route 12"
         aria-details="Navigate to Route 12"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(12, 7) }"
@@ -14180,7 +14180,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(13, 7); } ">
     <rect data-route='13'
-        aria-label="13"
+        aria-label="Route 13"
         aria-details="Navigate to Route 13"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(13, 7) }"
@@ -14189,7 +14189,7 @@
         x="864" y="576">
     </rect>
 
-    <text style="font-size: 32px" x="872" y="602">M.S.</text>
+    <text aria-hidden="true" style="font-size: 32px" x="872" y="602">M.S.</text>
 
 </g>
 
@@ -14201,7 +14201,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(14, 7); } ">
     <rect data-route='14'
-        aria-label="14"
+        aria-label="Route 14"
         aria-details="Navigate to Route 14"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(14, 7) }"
@@ -14210,7 +14210,7 @@
         x="752" y="528">
     </rect>
 
-    <text style="font-size: 32px" x="744" y="552">H.H.</text>
+    <text aria-hidden="true" style="font-size: 32px" x="744" y="552">H.H.</text>
 
 </g>
 
@@ -14221,7 +14221,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(14, 7); } ">
     <rect data-route='14'
-        aria-label="14"
+        aria-label="Route 14"
         aria-details="Navigate to Route 14"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(14, 7) }"
@@ -14241,7 +14241,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(1146, 7); } ">
     <rect data-route='1146'
-        aria-label="1146"
+        aria-label="Route 1146"
         aria-details="Navigate to Route 1146"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(1146, 7) }"
@@ -14262,7 +14262,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(15, 7); } ">
     <rect data-route='15'
-        aria-label="15"
+        aria-label="Route 15"
         aria-details="Navigate to Route 15"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(15, 7) }"
@@ -14280,7 +14280,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(15, 7); } ">
     <rect data-route='15'
-        aria-label="15"
+        aria-label="Route 15"
         aria-details="Navigate to Route 15"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(15, 7) }"
@@ -14289,7 +14289,7 @@
         x="672" y="368">
     </rect>
 
-    <text style="font-size: 32px" x="704" y="394">6</text>
+    <text aria-hidden="true" style="font-size: 32px" x="704" y="394">6</text>
 
 </g>
 
@@ -14302,7 +14302,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(15, 7); } ">
     <rect data-route='15'
-        aria-label="15"
+        aria-label="Route 15"
         aria-details="Navigate to Route 15"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(15, 7) }"
@@ -14320,7 +14320,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(15, 7); } ">
     <rect data-route='15'
-        aria-label="15"
+        aria-label="Route 15"
         aria-details="Navigate to Route 15"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(15, 7) }"
@@ -14339,7 +14339,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(16, 7); } ">
     <rect data-route='16'
-        aria-label="16"
+        aria-label="Route 16"
         aria-details="Navigate to Route 16"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(16, 7) }"
@@ -14348,7 +14348,7 @@
         x="816" y="432">
     </rect>
 
-    <text style="font-size: 32px" x="848" y="458">7</text>
+    <text aria-hidden="true" style="font-size: 32px" x="848" y="458">7</text>
 
 </g>
 
@@ -14362,7 +14362,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(17, 7); } ">
     <rect data-route='17'
-        aria-label="17"
+        aria-label="Route 17"
         aria-details="Navigate to Route 17"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(17, 7) }"
@@ -14371,7 +14371,7 @@
         x="832" y="304">
     </rect>
 
-    <text style="font-size: 32px" x="872" y="333">8</text>
+    <text aria-hidden="true" style="font-size: 32px" x="872" y="333">8</text>
 
 </g>
 
@@ -14385,7 +14385,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(18, 7); } ">
     <rect data-route='18'
-        aria-label="18"
+        aria-label="Route 18"
         aria-details="Navigate to Route 18"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(18, 7) }"
@@ -14394,7 +14394,7 @@
         x="864" y="272">
     </rect>
 
-    <text style="font-size: 32px" x="864" y="301">S.W.</text>
+    <text aria-hidden="true" style="font-size: 32px" x="864" y="301">S.W.</text>
 
 </g>
 
@@ -14406,7 +14406,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(19, 7); } ">
     <rect data-route='19'
-        aria-label="19"
+        aria-label="Route 19"
         aria-details="Navigate to Route 19"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(19, 7) }"
@@ -14415,7 +14415,7 @@
         x="784" y="784">
     </rect>
 
-    <text style="font-size: 32px" x="786" y="810">L.S.</text>
+    <text aria-hidden="true" style="font-size: 32px" x="786" y="810">L.S.</text>
 
 </g>
 
@@ -14426,7 +14426,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(19, 7); } ">
     <rect data-route='19'
-        aria-label="19"
+        aria-label="Route 19"
         aria-details="Navigate to Route 19"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(19, 7) }"
@@ -14447,7 +14447,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(20, 7); } ">
     <rect data-route='20'
-        aria-label="20"
+        aria-label="Route 20"
         aria-details="Navigate to Route 20"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(20, 7) }"
@@ -14456,7 +14456,7 @@
         x="944" y="272">
     </rect>
 
-    <text style="font-size: 32px" x="960" y="301">9</text>
+    <text aria-hidden="true" style="font-size: 32px" x="960" y="301">9</text>
 
 </g>
 
@@ -14470,7 +14470,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(21, 7); } ">
     <rect data-route='21'
-        aria-label="21"
+        aria-label="Route 21"
         aria-details="Navigate to Route 21"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(21, 7) }"
@@ -14479,7 +14479,7 @@
         x="944" y="320">
     </rect>
 
-    <text style="font-size: 32px" x="952" y="349">C.B.</text>
+    <text aria-hidden="true" style="font-size: 32px" x="952" y="349">C.B.</text>
 
 </g>
 
@@ -14491,7 +14491,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(22, 7); } ">
     <rect data-route='22'
-        aria-label="22"
+        aria-label="Route 22"
         aria-details="Navigate to Route 22"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(22, 7) }"
@@ -14500,7 +14500,7 @@
         x="896" y="432">
     </rect>
 
-    <text style="font-size: 32px" x="904" y="458">O.S.</text>
+    <text aria-hidden="true" style="font-size: 32px" x="904" y="458">O.S.</text>
 
 </g>
 
@@ -14514,7 +14514,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(23, 7); } ">
     <rect data-route='23'
-        aria-label="23"
+        aria-label="Route 23"
         aria-details="Navigate to Route 23"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(23, 7) }"
@@ -14523,7 +14523,7 @@
         x="752" y="208">
     </rect>
 
-    <text style="font-size: 32px" x="744" y="237">10 S.</text>
+    <text aria-hidden="true" style="font-size: 32px" x="744" y="237">10 S.</text>
 
 </g>
 
@@ -14537,7 +14537,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(24, 7); } ">
     <rect data-route='24'
-        aria-label="24"
+        aria-label="Route 24"
         aria-details="Navigate to Route 24"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(24, 7) }"
@@ -14546,7 +14546,7 @@
         x="768" y="96">
     </rect>
 
-    <text style="font-size: 32px" x="784" y="125">10 N.</text>
+    <text aria-hidden="true" style="font-size: 32px" x="784" y="125">10 N.</text>
 
 </g>
 
@@ -14557,7 +14557,7 @@
 
     data-bind="click:function(){ MapHelper.moveToRoute(24, 7); } ">
     <rect data-route='24'
-        aria-label="24"
+        aria-label="Route 24"
         aria-details="Navigate to Route 24"
         role="button"
         data-bind="attr: { class: MapHelper.calculateRouteCssClass(24, 7) }"
