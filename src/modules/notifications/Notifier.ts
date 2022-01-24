@@ -37,7 +37,7 @@ export default class Notifier {
 
             // Get the notification ready to display
             const toastID = Rand.string(7);
-            const toastHTML = `<div id="${toastID}" class="toast bg-${NotificationOption[type]}" data-autohide="false">
+            const toastHTML = `<div id="${toastID}" class="toast bg-${NotificationOption[type]}" data-autohide="false" role="alert">
                 ${title ? `<div class="toast-header">
                     ${image ? `<img src="${image}" class="icon" />` : ''}
                     <strong class="mr-auto text-primary">${title || ''}</strong>

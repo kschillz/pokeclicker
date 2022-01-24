@@ -101,7 +101,7 @@ class MapHelper {
         const cssClass = this.calculateRouteCssClass(route, region);
         if (cssClass.includes('currentLocation')) {
             return `Route ${route} (Current Location)`;
-        } else if (cssClass.includes('locked')) {
+        } else if (cssClass.includes('locked') && !cssClass.includes('unlocked')) {
             return `Route ${route} (Locked)`;
         } else {
             return `Route ${route}`;
