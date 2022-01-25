@@ -1236,7 +1236,10 @@
                 </button>
                 <button class="btn btn-secondary p-0"
                         onclick="DungeonRunner.initializeDungeon(player.town().dungeon)"
-                        data-bind="visible: player.town() instanceof DungeonTown, if: player.town().dungeon, attr: { class: player.town().dungeon && App.game.wallet.currencies[GameConstants.Currency.dungeonToken]() >= player.town().dungeon.tokenCost ? 'btn btn-success p-0' : 'btn btn-secondary p-0' }">
+                        data-bind="visible: player.town() instanceof DungeonTown, if: player.town().dungeon, attr: {
+                            class: player.town().dungeon && App.game.wallet.currencies[GameConstants.Currency.dungeonToken]() >= player.town().dungeon.tokenCost ? 'btn btn-success p-0' : 'btn btn-secondary p-0',
+                            'aria-label': 'start ' + DungeonRunner.dungeonSize(player.town().dungeon) + ' square dungeon; starting location bottom row middle column; use w a s d to navigate; use spacebar to interact'
+                        }">
                     Start<br/>
                         <span data-bind="template: { name: 'currencyTemplate', data: {'amount': player.town().dungeon.tokenCost, 'currency': GameConstants.Currency.dungeonToken}}"></span>
                 </button>
@@ -1355,15 +1358,15 @@
             </div>
 
             <!-- ko if: App.game.gameState === GameConstants.GameState.dungeon -->
-            <div id="dungeonMap" class="card sortable-disabled border-secondary mb-3 dungeon no-select">
+            <div id="dungeonMap" aria-labelledby="dungeon-name" class="card sortable-disabled border-secondary mb-3 dungeon no-select">
                 <div class="card-header p-0">
-                    <span data-bind="text: DungeonRunner.dungeon.name"></span>
+                    <span id="dungeon-name" data-bind="text: DungeonRunner.dungeon.name"></span>
                 </div>
                 <div class="card-body p-0 text-center">
                     <table class="dungeon-board">
                       <tbody data-bind="foreach: DungeonRunner.map.board()">
                         <tr data-bind="foreach: $data">
-                            <td data-bind=" click: function(){DungeonRunner.map.moveToCoordinates($context.$index(), $parentContext.$index()) }, attr: { class: $data.cssClass}"></td>
+                            <td data-bind=" click: function(){DungeonRunner.map.moveToCoordinates($context.$index(), $parentContext.$index()) }, attr: { class: $data.cssClass, 'aria-label': $data.a11yLabel }"></td>
                         </tr>
                       </tbody>
                     </table>

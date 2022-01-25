@@ -314,15 +314,15 @@
             </div>
 
             <!-- ko if: App.game.gameState === GameConstants.GameState.dungeon -->
-            <div id="dungeonMap" class="card sortable-disabled border-secondary mb-3 dungeon no-select">
+            <div id="dungeonMap" aria-labelledby="dungeon-name" class="card sortable-disabled border-secondary mb-3 dungeon no-select">
                 <div class="card-header p-0">
-                    <span data-bind="text: DungeonRunner.dungeon.name"></span>
+                    <span id="dungeon-name" data-bind="text: DungeonRunner.dungeon.name"></span>
                 </div>
                 <div class="card-body p-0 text-center">
                     <table class="dungeon-board">
                       <tbody data-bind="foreach: DungeonRunner.map.board()">
                         <tr data-bind="foreach: $data">
-                            <td data-bind=" click: function(){DungeonRunner.map.moveToCoordinates($context.$index(), $parentContext.$index()) }, attr: { class: $data.cssClass}"></td>
+                            <td data-bind=" click: function(){DungeonRunner.map.moveToCoordinates($context.$index(), $parentContext.$index()) }, attr: { class: $data.cssClass, 'aria-label': $data.a11yLabel }"></td>
                         </tr>
                       </tbody>
                     </table>

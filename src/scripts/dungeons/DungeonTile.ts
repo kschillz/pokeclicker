@@ -4,6 +4,7 @@ class DungeonTile {
     _hasPlayer: boolean;
     type: KnockoutObservable<GameConstants.DungeonTile>;
     cssClass: KnockoutObservable<string>;
+    a11yLabel: KnockoutObservable<string>;
 
     constructor(type: GameConstants.DungeonTile) {
         this._isVisible = false;
@@ -11,7 +12,9 @@ class DungeonTile {
         this._hasPlayer = false;
         this.type = ko.observable(type);
         this.cssClass = ko.observable('');
+        this.a11yLabel = ko.observable('');
         this.calculateCssClass();
+        this.calculateA11yLabel();
     }
 
     get isVisible() {
@@ -21,6 +24,7 @@ class DungeonTile {
     set isVisible(val) {
         this._isVisible = val;
         this.calculateCssClass();
+        this.calculateA11yLabel();
     }
 
     get isVisited() {
@@ -30,6 +34,7 @@ class DungeonTile {
     set isVisited(val) {
         this._isVisited = val;
         this.calculateCssClass();
+        this.calculateA11yLabel();
     }
 
     get hasPlayer() {
@@ -39,6 +44,7 @@ class DungeonTile {
     set hasPlayer(val) {
         this._hasPlayer = val;
         this.calculateCssClass();
+        this.calculateA11yLabel();
     }
 
     public calculateCssClass() {
@@ -60,5 +66,21 @@ class DungeonTile {
         css .push(`tile-${GameConstants.DungeonTile[this.type()]}`);
         // Join all the classes
         this.cssClass(css.join(' '));
+    }
+
+    public calculateA11yLabel() {
+        let label = 'Tile';
+        if (!this.isVisible) {
+            this.a11yLabel(label);
+            return;
+        }
+        label = `${GameConstants.DungeonTile[this.type()]} Tile`;
+        if (this.isVisited) {
+            label += ' (Visited)';
+        }
+        if (this.hasPlayer) {
+            label += ' (Current Location)';
+        }
+        this.a11yLabel(label);
     }
 }
