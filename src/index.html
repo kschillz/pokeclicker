@@ -322,7 +322,9 @@
                     <table class="dungeon-board">
                       <tbody data-bind="foreach: DungeonRunner.map.board()" tabindex="0" aria-label="dungeon board">
                         <tr data-bind="foreach: $data">
-                            <td data-bind=" click: function(){DungeonRunner.map.moveToCoordinates($context.$index(), $parentContext.$index()) }, attr: { class: $data.cssClass, 'aria-label': $data.a11yLabel }"></td>
+                            <td>
+                                <div data-bind=" click: function(){DungeonRunner.map.moveToCoordinates($context.$index(), $parentContext.$index()) }, attr: { class: $data.cssClass, 'aria-label': $data.a11yLabel }"></div>
+                            </td>
                             <!-- <td data-bind=" click: function(){DungeonRunner.map.moveToCoordinates($context.$index(), $parentContext.$index()) }, attr: { class: $data.cssClass, 'aria-label': 'row ' + $context.$index() + ' column ' + $parentContext.$index() + ' ' + $data.a11yLabel() }"></td> -->
                         </tr>
                       </tbody>
